@@ -3,19 +3,19 @@
 	import NavButton from "$lib/components/NavButton.svelte";
 </script>
 
-<div class="mx-auto flex min-h-screen w-[750px] flex-col py-5 gap-2">
+<div class="mx-auto flex min-h-screen w-[750px] flex-col gap-2 py-5">
 	<div>
 		<h1 class="text-center font-medium">squidee.dev</h1>
-		<nav class="flex justify-center gap-4 py-2">
+		<nav class="flex justify-center gap-4 py-2 text-xl">
 			<NavButton path="/" text="Home" />
-			<span>·</span>
+			<span class="font-semibold">·</span>
 			<NavButton path="/squidcraft" text="SquidCraft M" />
 		</nav>
 	</div>
-	<div class="grow flex flex-col bg-white p-10 rounded-2xl">
+	<div class="flex grow flex-col rounded-2xl bg-white p-10">
 		<slot />
 	</div>
-	<div class="px-10 flex justify-between">
+	<div class="flex justify-between px-10">
 		<span>© 2023 Zane Shaw. All rights reserved.</span>
 		<a href="/" class="link">squidee.dev</a>
 	</div>
