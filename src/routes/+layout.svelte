@@ -19,6 +19,6 @@
 	</div>
 	<div class="px-10 flex justify-between">
 		<span>© 2023 Zane Shaw. All rights reserved.</span>
-		<a href="/">squidee.dev</a>
+		<a href="/" class="link">squidee.dev</a>
 	</div>
 </div>

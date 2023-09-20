@@ -7,9 +7,9 @@
 	<div>
 		<h2>SquidCraft M</h2>
 		<p>
-			This is the official portal for <em>SquidCraft M</em> <a href="#modpacks">downloads</a> and info. Try
-			<a href="#join">joining the server</a>
-			or view the <a href="#modlist">list of mods</a>.
+			This is the official portal for <em>SquidCraft M</em> <a href="#modpacks" class="link">downloads</a> and info. Try
+			<a href="#join" class="link">joining the server</a>
+			or view the <a href="#modlist" class="link">list of mods</a>.
 		</p>
 	</div>
 	<FrontPageSection id="join" header="Join">

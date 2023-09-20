@@ -5,7 +5,7 @@
 	export let text: string;
 </script>
 
-<a href={path} class="!bg-none font-light">
+<a href={path}>
 	{#if path == $page.route.id}
 		<em>
 			{text}
