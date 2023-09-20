@@ -4,7 +4,7 @@
 		<p>(If I know you, you're probably going to instantly be whitelisted.)</p>
 		<p class="text-red-400">* Indicates required</p>
 	</div>
-	<form name="join" netlify class="flex flex-col gap-2 items-center w-fit mx-auto">
+	<form name="join" data-netlify="true" method="POST" class="flex flex-col gap-2 items-center w-fit mx-auto">
 		<input type="text" name="name" placeholder="Name (optional)" />
 		<div class="relative">
 			<input type="text" name="ign" placeholder="Minecraft JE IGN" required /><span class="text-red-400 absolute top-0 -right-3">*</span>
@@ -12,6 +12,18 @@
 		<span></span>
 		<button type="submit" class="btn ml-auto">Join</button>
 	</form>
+
+	<form name="contact" data-netlify="true" method="POST">
+		<p>
+		  <label>Name <input type="text" name="name" /></label>
+		</p>
+		<p>
+		  <label>Email <input type="email" name="email" /></label>
+		</p>
+		<p>
+		  <button type="submit" class="btn">Send</button>
+		</p>
+	  </form>
 </div>
 
 <style lang="postcss">
