@@ -6,7 +6,11 @@
 	$: if (browser) res = Array.from($page?.url?.searchParams || []);
 </script>
 
-<div class="mx-auto ring-2 ring-violet-300 px-10 py-8 rounded-lg flex flex-col">
+<svelte:head>
+	<title>squidee.dev - Application submitted</title>
+</svelte:head>
+
+<div class="mx-auto flex flex-col rounded-lg px-10 py-8 ring-2 ring-violet-300">
 	<h1>Application submitted!</h1>
 	<p class="mb-4">Zane will review your submission soon and add you to the whitelist :D</p>
 	<code>Name: {res?.[0][1]}</code>

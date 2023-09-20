@@ -12,7 +12,7 @@
 			<NavButton path="/squidcraft" text="SquidCraft M" />
 		</nav>
 	</div>
-	<div class="grow bg-white p-10 rounded-2xl">
+	<div class="grow flex flex-col bg-white p-10 rounded-2xl">
 		<slot />
 	</div>
 	<div class="px-10 flex justify-between">

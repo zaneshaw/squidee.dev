@@ -3,6 +3,10 @@
 	import FrontPageSection from "$lib/components/SquidCraft/FrontPageSection.svelte";
 </script>
 
+<svelte:head>
+	<title>squidee.dev - SquidCraft M</title>
+</svelte:head>
+
 <div class="flex flex-col gap-8">
 	<div>
 		<h2>SquidCraft M</h2>

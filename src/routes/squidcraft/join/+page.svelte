@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>squidee.dev - Join SquidCraft M</title>
+</svelte:head>
+
 <div class="flex flex-col gap-4">
 	<div>
 		<h2>SquidCraft M - Apply to Join</h2>
@@ -12,7 +16,7 @@
 	>
 		<input type="text" name="name" placeholder="Name (optional)" />
 		<div class="relative">
-			<input type="text" name="ign" placeholder="Minecraft JE IGN" required /><span
+			<input type="text" name="ign" placeholder="Minecraft IGN" required /><span
 				class="absolute -right-3 top-0 text-red-400">*</span
 			>
 		</div>
