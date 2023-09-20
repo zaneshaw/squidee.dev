@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { page } from "$app/stores";
-	import { onMount } from "svelte";
 	import "../app.postcss";
 	import NavButton from "$lib/components/NavButton.svelte";
 </script>

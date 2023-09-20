@@ -4,18 +4,25 @@
 		<p>(If I know you, you're probably going to instantly be whitelisted.)</p>
 		<p class="text-red-400">* Indicates required</p>
 	</div>
-	<form name="join" data-netlify="true" class="flex flex-col gap-2 items-center w-fit mx-auto">
+	<form
+		name="join"
+		data-netlify="true"
+		action="/squidcraft/join/success"
+		class="mx-auto flex w-fit flex-col items-center gap-2"
+	>
 		<input type="text" name="name" placeholder="Name (optional)" />
 		<div class="relative">
-			<input type="text" name="ign" placeholder="Minecraft JE IGN" required /><span class="text-red-400 absolute top-0 -right-3">*</span>
+			<input type="text" name="ign" placeholder="Minecraft JE IGN" required /><span
+				class="absolute -right-3 top-0 text-red-400">*</span
+			>
 		</div>
 		<span></span>
-		<button type="submit" class="btn ml-auto">Join</button>
+		<button type="submit" class="btn w-full">Join</button>
 	</form>
 </div>
 
 <style lang="postcss">
 	input {
-		@apply rounded-lg ring-violet-300 focus:ring-violet-500 outline-0 ring-2 px-4 py-2;
+		@apply rounded-lg px-4 py-2 outline-0 ring-2 ring-violet-300 focus:ring-violet-500;
 	}
 </style>
