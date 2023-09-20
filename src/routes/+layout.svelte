@@ -9,23 +9,25 @@
 
 <div class="mx-auto flex min-h-screen w-[750px] flex-col gap-2 py-5">
 	<div>
-		<div class="relative mx-auto w-fit">
+		<div class="relative mx-auto flex w-fit gap-2">
 			<h1 class="text-center font-medium">squidee.dev</h1>
-			<div
-				on:mouseenter={() => (statusPopover = true)}
-				on:mouseleave={() => (statusPopover = false)}
-				aria-hidden
-				class="absolute -right-5 top-1/2 w-3 -translate-y-1/2 rounded-full {status ? "bg-green-500" : "bg-red-500"}"
-			>
-				{#if statusPopover}
-					<div
-						transition:fade={{ duration: 75 }}
-						class="absolute -right-3 top-1/2 -translate-y-1/2 translate-x-full w-max rounded bg-white px-3 py-1 shadow"
-					>
-						I am {status ? "ONLINE" : "OFFLINE"}
-					</div>
-				{/if}
-				<div class="aspect-square animate-ping rounded-full {status ? "bg-green-500" : "bg-red-500"}"></div>
+			<div class="flex">
+				<div
+					on:mouseenter={() => (statusPopover = true)}
+					on:mouseleave={() => (statusPopover = false)}
+					aria-hidden
+					class="my-auto h-3 w-3 rounded-full {status ? 'bg-green-500' : 'bg-red-500'}"
+				>
+					{#if statusPopover}
+						<div
+							transition:fade={{ duration: 75 }}
+							class="absolute -right-3 top-1/2 w-max -translate-y-1/2 translate-x-full rounded bg-white px-3 py-1 shadow"
+						>
+							I am {status ? "ONLINE" : "OFFLINE"}
+						</div>
+					{/if}
+					<div class="animate-ping-slow h-3 w-3 rounded-full {status ? 'bg-green-500' : 'bg-red-500'}"></div>
+				</div>
 			</div>
 		</div>
 		<nav class="flex justify-center gap-4 py-2 text-xl">
