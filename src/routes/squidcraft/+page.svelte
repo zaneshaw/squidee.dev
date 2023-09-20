@@ -27,7 +27,7 @@
 			/>
 			<DownloadPackCard
 				packName="Optimisation Pack"
-				packDesc="Optional optimisation pack if your having performance issues."
+				packDesc="Optional optimisation pack if you're having performance issues."
 				packImage="/icon_opti.png"
 				packImageHover="/icon_opti_hover.png"
 				outline
