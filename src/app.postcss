@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply font-light;
+	}
+
+	body {
+		@apply bg-violet-50;
+	}
+
+	h1 {
+		@apply text-3xl;
+	}
+
+	h2 {
+		@apply text-2xl;
+	}
+
+	h3 {
+		@apply text-xl;
+	}
+
+	a {
+		@apply font-medium;
+		background-image: linear-gradient(to top, #ffffff00 15%, #a78bfa80 15%, #a78bfa80 40%, #ffffff00 40%);
+	}
+
+	a:hover {
+		background-image: linear-gradient(to top, #ffffff00 15%, #a78bfa80 15%, #a78bfa80 50%, #ffffff00 50%);
+	}
+
+	em {
+		@apply not-italic text-violet-700 transition-all;
+		text-shadow:
+			0 0 1px #a78bfa,
+			0 0 3px #8b5cf6;
+	}
+
+	em:hover {
+		text-shadow:
+			0 0 3px #a78bfa,
+			0 0 5px #8b5cf6;
+	}
+}
+
+@layer components {
+	.btn {
+		@apply rounded-xl bg-violet-500 px-4 py-2 font-semibold text-white ring-0 hover:bg-violet-600;
+	}
+
+	.btn-outline {
+		@apply bg-transparent text-violet-500 ring-2 ring-inset ring-violet-500 transition-all hover:bg-violet-100;
+	}
+}
