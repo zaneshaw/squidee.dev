@@ -6,7 +6,7 @@
 </script>
 
 <a href={path}>
-	{#if path == $page.route.id}
+	{#if path.split("/")[1] == $page.route.id?.split("/")[1]}
 		<em>
 			{text}
 		</em>

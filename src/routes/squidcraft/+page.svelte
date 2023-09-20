@@ -14,7 +14,7 @@
 	</div>
 	<FrontPageSection id="join" header="Join">
 		<p class="mb-4">Please only submit a whitelist application if you know <em>Zane</em>/<em>squidee</em>!</p>
-		<button class="btn w-fit">Request to Join</button>
+		<a href="/squidcraft/join" class="btn w-fit">Request to Join</a>
 	</FrontPageSection>
 	<FrontPageSection id="modpacks" header="Modpacks">
 		<p class="mb-4">Download curated modpacks for the server here!</p>
