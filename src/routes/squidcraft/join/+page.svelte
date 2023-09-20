@@ -12,6 +12,18 @@
 		<span></span>
 		<button type="submit" class="btn ml-auto">Join</button>
 	</form>
+
+	<form name="contact" netlify>
+		<p>
+		  <label>Name <input type="text" name="name" /></label>
+		</p>
+		<p>
+		  <label>Email <input type="email" name="email" /></label>
+		</p>
+		<p>
+		  <button type="submit" class="btn">Send</button>
+		</p>
+	  </form>
 </div>
 
 <style lang="postcss">
