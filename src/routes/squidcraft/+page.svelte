@@ -25,7 +25,8 @@
 		<div class="flex justify-center gap-20">
 			<DownloadPackCard
 				packName="Core Pack"
-				packDesc="Mod pack for the SquidCraft M server. This is <em>required</em>."
+				packFlavour="(required)"
+				packDesc="Essential modpack for the <em>SquidCraft M</em> server."
 				packImage="/icon_core.png"
 				packImageHover="/icon_core_hover.png"
 			/>

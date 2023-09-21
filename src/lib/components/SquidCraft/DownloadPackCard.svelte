@@ -34,9 +34,12 @@
 	</div>
 	<div class="flex flex-col gap-4 text-left">
 		<div>
-			<h3 class="text-lg font-bold text-neutral-700">
-				{packName}
-			</h3>
+			<div class="flex items-center gap-1">
+				<h3 class="text-lg font-bold text-neutral-700">
+					{packName}
+				</h3>
+				<span class="text-neutral-500 text-sm">{packFlavour}</span>
+			</div>
 			<span class="text-sm">{@html packDesc}</span>
 		</div>
 		<button class="btn {outline && 'btn-outline'}">Download</button>
