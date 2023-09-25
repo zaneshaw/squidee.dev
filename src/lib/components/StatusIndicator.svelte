@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 
@@ -26,25 +27,39 @@
 
 	function updateStatus() {
 		if (userData === undefined) return;
+		let newStatus;
 
-		// ternaries here? 😕👎
 		if (userData.success) {
 			if (["online", "dnd"].includes(userData.data.discord_status)) {
-				status = Status.ONLINE;
+				newStatus = Status.ONLINE;
 			} else {
-				status = Status.OFFLINE;
+				newStatus = Status.OFFLINE;
 			}
 		} else {
-			status = Status.ERROR;
+			newStatus = Status.ERROR;
+		}
+		let doCache = status != newStatus;
+		status = newStatus;
+
+		if (doCache) {
+			localStorage.setItem(
+				"status",
+				Object.values(Status)
+					.findIndex((val) => val === status)
+					.toString()
+			);
 		}
 	}
 
 	async function fetchStatus() {
+		if (!browser) return;
+		const cache = localStorage.getItem("status");
+		if (cache && +cache < 3) status = Object.values(Status)[+cache];
 		userData = await (await fetch("https://api.lanyard.rest/v1/users/635058422169206785")).json();
 	}
 
+	fetchStatus();
 	onMount(async () => {
-		fetchStatus();
 		setInterval(fetchStatus, 120000);
 	});
 </script>
