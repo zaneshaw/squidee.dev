@@ -29,6 +29,7 @@
 				packDesc="Essential modpack for the <em>SquidCraft M</em> server."
 				packImage="/icon_core.png"
 				packImageHover="/icon_core_hover.png"
+				href="https://modrinth.com/modpack/squidcraftm"
 			/>
 			<DownloadPackCard
 				packName="Optimisation Pack"
@@ -36,6 +37,7 @@
 				packImage="/icon_opti.png"
 				packImageHover="/icon_opti_hover.png"
 				outline
+				href=""
 			/>
 		</div>
 	</FrontPageSection>

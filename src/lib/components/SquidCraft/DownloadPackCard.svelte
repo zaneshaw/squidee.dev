@@ -7,6 +7,7 @@
 	export let packImage: string;
 	export let packImageHover: string;
 	export let outline: boolean = false;
+	export let href: string;
 
 	let hovered: boolean;
 </script>
@@ -42,6 +43,6 @@
 			</div>
 			<span class="text-sm">{@html packDesc}</span>
 		</div>
-		<button class="btn {outline && 'btn-outline'}">Download</button>
+		<a {href} target="_blank" class="btn text-center {outline && 'btn-outline'}">Download</a>
 	</div>
 </div>
