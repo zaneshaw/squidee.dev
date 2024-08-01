@@ -1,5 +1,65 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import SocialLink from "$lib/components/SocialLink.svelte";
+	import { DateTime } from "luxon";
+	import { onDestroy, onMount } from "svelte";
+
+	let age: string = "uhhhhhhhhhhh";
+	let ageInterval: number;
+
+	const updateAge = () => {
+		// could just get age then increment on interval
+		age = (
+			DateTime.now()
+				.diff(DateTime.local(2005, 8, 20))
+				.toMillis() /
+			1000 /
+			60 /
+			60 /
+			24 /
+			365
+		).toFixed(9);
+	};
+
+	onMount(() => {
+		updateAge();
+
+		clearInterval(ageInterval);
+		ageInterval = setInterval(updateAge, 50);
+	});
+
+	onDestroy(() => {
+		clearInterval(ageInterval);
+	});
+</script>
 
 <svelte:head>
 	<title>squidee.dev</title>
 </svelte:head>
+
+<div class="flex flex-col gap-4">
+	<div class="flex items-center gap-6">
+		<div class="flex aspect-square h-24 items-center justify-center ring-1 ring-neutral-300">game here</div>
+		<div class="flex flex-col gap-4">
+			<h1>zane shaw</h1>
+			<div class="flex flex-col">
+				<div class="flex gap-2">
+					<img src="mail.svg" alt="mail icon" class="w-5" />
+					<span>zane &lbrace;at&rbrace; squidee.dev</span>
+				</div>
+				<div class="flex gap-2">
+					<img src="map-pin.svg" alt="map pin icon" class="w-5" />
+					<span>melbourne, australia</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p>
+		yo. i'm an <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently
+		developing games and websites for fun. i'll try to keep my <a href="/folio" class="link">folio</a> up-to-date and
+		might <a href="/blog" class="link">post</a> random stuff that i find interesting.
+	</p>
+	<div class="flex justify-end gap-14">
+		<SocialLink url={"https://github.com/zaneshaw"} icon={"github.svg"} alt={"github logo"}>github</SocialLink>
+		<SocialLink url={"https://x.com/zaneshaw_"} icon={"twitter.svg"} alt={"twitter logo"}>twitter / x</SocialLink>
+	</div>
+</div>

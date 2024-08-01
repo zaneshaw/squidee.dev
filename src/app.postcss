@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		@apply flex min-h-screen flex-col bg-neutral-950 text-neutral-300;
+		padding: 32px max(32px, calc(0.5 * max(0px, calc(100% - 600px))));
+	}
+
+	h1 {
+		@apply text-2xl font-semibold tracking-tighter text-white;
+	}
+}
+
+@layer components {
+	.link {
+		@apply relative inline-block h-[calc(1.5rem+2px)] cursor-pointer px-0.5 font-medium text-white transition-[color];
+	}
+
+	.link:hover {
+		@apply text-neutral-950 no-underline;
+	}
+
+	.link::after {
+		@apply absolute left-0 top-6 -z-10 h-0.5 w-full bg-white transition-[height,top] content-[""];
+	}
+
+	.link:hover::after {
+		@apply top-0 h-full;
+	}
+}
