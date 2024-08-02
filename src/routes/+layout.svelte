@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Terminal from "$lib/components/Terminal.svelte";
 	import "../app.postcss";
 </script>
 
@@ -10,3 +11,5 @@
 <main>
 	<slot />
 </main>
+
+<Terminal />
