@@ -15,8 +15,9 @@
 	let input: HTMLInputElement;
 
 	const submit = () => {
-		const message = input.value;
+		const message = input.value.trim();
 		const responses: string[] = [];
+		if (message == "") return;
 		history = [...history, "", `> ${message}`];
 
 		setTimeout(() => {
@@ -28,27 +29,36 @@
 			}
 
 			history = [...history, ...responses];
+			scrollBottom();
 		}, 200);
 
 		input.value = "";
 
-		setTimeout(() => {
-			output.scrollTo(0, output.scrollHeight);
-		}, 1);
+		scrollBottom();
 	};
 
 	const open = () => {
 		isOpen = true;
 
-		setTimeout(() => {
-			input.focus();
-			output.scrollTo(0, output.scrollHeight);
-		}, 1);
+		focus();
+		scrollBottom();
 	};
 
 	const close = () => {
 		isOpen = false;
 	};
+
+	const focus = () => {
+		setTimeout(() => {
+			input.focus();
+		}, 1);
+	}
+
+	const scrollBottom = () => {
+		setTimeout(() => {
+			output.scrollTo(0, output.scrollHeight);
+		}, 1);
+	}
 </script>
 
 {#if isOpen}
