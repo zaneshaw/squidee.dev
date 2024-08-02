@@ -1,5 +1,7 @@
 <script lang="ts">
-	import SocialLink from "$lib/components/SocialLink.svelte";
+	import InfoItem from "$lib/components/InfoItem.svelte";
+import SocialLink from "$lib/components/SocialLink.svelte";
+	import StatusIndicator from "$lib/components/StatusIndicator.svelte";
 	import { DateTime } from "luxon";
 	import { onDestroy, onMount } from "svelte";
 
@@ -38,18 +40,13 @@
 
 <div class="flex flex-col gap-4">
 	<div class="flex items-center gap-6">
-		<div class="flex aspect-square h-24 items-center justify-center ring-1 ring-neutral-300">game here</div>
-		<div class="flex flex-col gap-4">
+		<div class="flex aspect-square h-28 items-center justify-center ring-1 ring-neutral-300">game here</div>
+		<div class="flex flex-col gap-2">
 			<h1>zane shaw</h1>
 			<div class="flex flex-col">
-				<div class="flex gap-2">
-					<img src="mail.svg" alt="mail icon" class="w-5" />
-					<span>zane &lbrace;at&rbrace; squidee.dev</span>
-				</div>
-				<div class="flex gap-2">
-					<img src="map-pin.svg" alt="map pin icon" class="w-5" />
-					<span>melbourne, australia</span>
-				</div>
+				<StatusIndicator />
+				<InfoItem icon="mail.svg" alt="mail icon" label="zane &lbrace;at&rbrace; squidee.dev" />
+				<InfoItem icon="map-pin.svg" alt="map pin icon" label="melbourne, australia" />
 			</div>
 		</div>
 	</div>
