@@ -2,6 +2,7 @@
 	import { fade, slide } from "svelte/transition";
 
 	let isOpen: boolean;
+	let locked: boolean;
 	let history: string[] = [
 		" ___  ___  _   _ ___ ___    _____ ___ ___ __  __ ___ _  _   _   _          _ ",
 		"/ __|/ _ \\| | | |_ _|   \\  |_   _| __| _ \\  \\/  |_ _| \\| | /_\\ | |    __ _/ |",
@@ -17,8 +18,9 @@
 	const submit = () => {
 		const message = input.value.trim();
 		const responses: string[] = [];
-		if (message == "") return;
+		if (locked || message == "") return;
 		history = [...history, "", `> ${message}`];
+		locked = true;
 
 		setTimeout(() => {
 			if (message == "help") {
@@ -29,8 +31,9 @@
 			}
 
 			history = [...history, ...responses];
+			locked = false;
 			scrollBottom();
-		}, 200);
+		}, 100);
 
 		input.value = "";
 
