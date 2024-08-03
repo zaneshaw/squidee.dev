@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		scrollbar-gutter: stable;
+	}
+
 	body {
 		@apply flex min-h-screen flex-col bg-neutral-950 text-neutral-300;
 		padding: 32px max(32px, calc(0.5 * max(0px, calc(100% - 600px))));
