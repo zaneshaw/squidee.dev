@@ -15,7 +15,7 @@
 		const to = routes.indexOf(nav.to?.route.id);
 
 		direction = from > to ? -1 : 1;
-	}
+	};
 </script>
 
 <header class="flex gap-5 py-8">

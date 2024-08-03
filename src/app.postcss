@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+	::-webkit-scrollbar {
+		@apply w-6;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply rounded-full border-8 border-solid border-transparent bg-neutral-800 bg-clip-padding;
+	}
+
 	html {
 		scrollbar-gutter: stable;
 	}

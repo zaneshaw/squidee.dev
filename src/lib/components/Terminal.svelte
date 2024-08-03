@@ -55,20 +55,20 @@
 		setTimeout(() => {
 			input.focus();
 		}, 1);
-	}
+	};
 
 	const scrollBottom = () => {
 		setTimeout(() => {
 			output.scrollTo(0, output.scrollHeight);
 		}, 1);
-	}
+	};
 </script>
 
 {#if isOpen}
 	<div transition:fade={{ duration: 100 }} class="absolute bottom-3 left-3 flex w-[600px] flex-col gap-2 font-mono text-xs">
 		<div class="overflow-hidden rounded bg-neutral-900/70 ring-1 ring-neutral-700/70">
 			<div class="flex justify-between bg-neutral-700/70 text-neutral-400">
-				<span class="px-2 my-auto">squid terminal v1</span>
+				<span class="my-auto px-2">squid terminal v1</span>
 				<button on:click={close}>
 					<img src="x.svg" alt="close icon" />
 				</button>
@@ -76,7 +76,7 @@
 			<div bind:this={output} class="flex h-[12.05rem] overflow-y-auto px-1">
 				<pre class="flex w-full flex-col font-mono leading-none"> <!-- fix: mt-auto doesnt work -->
 					{#each history as message}
-						<span class="h-[0.75rem] min-h-[0.75rem]">{message}</span>
+						<span class="h-[0.75rem] min-h-[0.75rem] whitespace-break-spaces break-all">{message}</span>
 					{/each}
 				</pre>
 			</div>
