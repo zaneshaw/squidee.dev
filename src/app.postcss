@@ -15,18 +15,22 @@
 
 @layer components {
 	.link {
-		@apply relative inline-block h-[calc(1.5rem+2px)] cursor-pointer px-0.5 font-medium text-white transition-[color];
+		@apply relative inline-block cursor-pointer px-0.5 font-medium text-white no-underline transition-[color];
 	}
 
 	.link:hover {
-		@apply text-neutral-950 no-underline;
+		@apply text-neutral-950;
 	}
 
 	.link::after {
-		@apply absolute left-0 top-6 -z-10 h-0.5 w-full bg-white transition-[height,top] content-[""];
+		@apply absolute bottom-0 left-0 -z-10 h-0.5 w-full origin-bottom bg-white transition-[height] content-[""];
 	}
 
 	.link:hover::after {
-		@apply top-0 h-full;
+		@apply h-full;
+	}
+
+	.input {
+		@apply border-b border-white bg-transparent outline-none placeholder:text-neutral-500;
 	}
 }
