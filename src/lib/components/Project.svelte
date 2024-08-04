@@ -11,13 +11,13 @@
 		<div class="flex justify-between gap-5">
 			<h2 class="truncate">{name}</h2>
 			<div class="flex shrink-0 gap-8">
-				<a href={demoURL} target="_blank" class="flex shrink-0 cursor-pointer gap-1">
+				<a href={demoURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
 					<h2 class="link font-normal">demo</h2>
-					<img src="external-link.svg" alt="" class="mb-auto w-3" />
+					<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
 				</a>
-				<a href={sourceURL} target="_blank" class="flex shrink-0 cursor-pointer gap-1">
+				<a href={sourceURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
 					<h2 class="link font-normal">source</h2>
-					<img src="external-link.svg" alt="" class="mb-auto w-3" />
+					<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
 				</a>
 			</div>
 		</div>
