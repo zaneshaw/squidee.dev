@@ -7,7 +7,7 @@
 
 <div class="group flex overflow-hidden rounded p-2 pr-0 ring-1 ring-transparent transition-all hover:ring-neutral-700">
 	<div class="flex aspect-square h-32 cursor-default items-center justify-center rounded bg-neutral-800 transition-all group-hover:text-lg">image here</div>
-	<div class="relative w-full overflow-auto px-4 py-3">
+	<div class="relative flex w-full flex-col gap-2 overflow-auto px-4 py-3">
 		<div class="flex justify-between gap-5">
 			<h2 class="truncate">{name}</h2>
 			<div class="flex shrink-0 gap-8">
@@ -21,7 +21,7 @@
 				</a>
 			</div>
 		</div>
-		<p class="line-clamp-2 break-words text-neutral-400 transition-colors group-hover:text-neutral-300">
+		<p class="line-clamp-2 break-words leading-tight text-neutral-400 transition-colors group-hover:text-neutral-300">
 			{description}
 		</p>
 		<div class="absolute bottom-0 right-0 flex gap-1 p-[inherit]">
