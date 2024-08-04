@@ -57,8 +57,8 @@
 		to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
 	</p>
 	<div class="flex justify-end gap-10">
-		<SocialLink icon={"mail.svg"} alt={"mail icon"}>zane &lbrace;at&rbrace; squidee.dev</SocialLink>
-		<SocialLink url={"https://github.com/zaneshaw"} icon={"github.svg"} alt={"github logo"}>github</SocialLink>
-		<SocialLink url={"https://x.com/zaneshaw_"} icon={"twitter.svg"} alt={"twitter logo"}>twitter / x</SocialLink>
+		<SocialLink icon="mail.svg" alt="mail icon">zane &lbrace;at&rbrace; squidee.dev</SocialLink>
+		<SocialLink url="https://github.com/zaneshaw" icon="github.svg" alt="github logo">github</SocialLink>
+		<SocialLink url="https://x.com/zaneshaw_" icon="twitter.svg" alt="twitter logo">twitter / x</SocialLink>
 	</div>
 </div>
