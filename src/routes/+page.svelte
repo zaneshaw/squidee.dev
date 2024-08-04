@@ -35,16 +35,19 @@ import SocialLink from "$lib/components/SocialLink.svelte";
 </script>
 
 <svelte:head>
-	<title>squidee.dev</title>
+	<title>zane shaw</title>
 </svelte:head>
 
 <div class="flex flex-col gap-4">
 	<div class="flex items-center gap-6">
 		<div class="flex aspect-square h-28 items-center justify-center ring-1 ring-neutral-300">game here</div>
 		<div class="flex flex-col gap-2">
-			<h1>zane shaw</h1>
-			<div class="flex flex-col">
+			<div class="flex gap-1.5">
+				<h1>zane shaw</h1>
 				<StatusIndicator />
+			</div>
+			<div class="flex flex-col">
+				<InfoItem icon="user.svg" alt="user icon" label="squidee" />
 				<InfoItem icon="mail.svg" alt="mail icon" label="zane &lbrace;at&rbrace; squidee.dev" />
 				<InfoItem icon="map-pin.svg" alt="map pin icon" label="melbourne, australia" />
 			</div>

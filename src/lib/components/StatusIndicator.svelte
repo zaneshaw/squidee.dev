@@ -62,8 +62,10 @@
 	});
 </script>
 
-<div class="relative flex gap-2">
-	<div class="mx-0.5 my-auto h-4 w-4 rounded-full {status.colour}" />
-	<div on:animationiteration={updateStatus} class="absolute left-0.5 top-1 -z-10 h-4 w-4 animate-ping-slow rounded-full {status.colour}" />
-	<span>{status.label}</span>
+<div class="relative">
+	<div class="absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full {status.colour}" />
+	<div
+		on:animationiteration={updateStatus}
+		class="absolute top-1/2 -z-10 h-3 w-3 origin-bottom -translate-y-1/2 animate-ping-slow rounded-full {status.colour}"
+	/>
 </div>

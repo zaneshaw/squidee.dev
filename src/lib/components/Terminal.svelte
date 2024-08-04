@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade, slide } from "svelte/transition";
+	import { fade, fly } from "svelte/transition";
 
 	let isOpen: boolean;
 	let locked: boolean;
@@ -65,7 +65,7 @@
 </script>
 
 {#if isOpen}
-	<div transition:fade={{ duration: 100 }} class="absolute bottom-3 left-3 flex w-[600px] flex-col gap-2 font-mono text-xs">
+	<div transition:fade={{ duration: 100 }} class="fixed bottom-3 left-3 flex w-[600px] flex-col gap-2 font-mono text-xs">
 		<div class="overflow-hidden rounded bg-neutral-900/70 ring-1 ring-neutral-700/70">
 			<div class="flex justify-between bg-neutral-700/70 text-neutral-400">
 				<span class="my-auto px-2">squid terminal v1</span>
@@ -92,7 +92,7 @@
 		/>
 	</div>
 {:else}
-	<button transition:slide={{ duration: 150 }} on:click={open} class="absolute bottom-0 left-0 p-2">
+	<button transition:fly={{ x: -15, duration: 250 }} on:click={open} class="fixed bottom-0 left-0 p-2">
 		<img src="square-terminal.svg" alt="terminal icon" />
 	</button>
 {/if}
