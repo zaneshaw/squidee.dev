@@ -7,21 +7,25 @@
 	export let data;
 
 	let direction: number;
-	let routes = ["/", "/folio", "/blog"];
+	let routes = [
+		{ name: "me", path: "/" },
+		{ name: "folio", path: "/folio" },
+		{ name: "blog", path: "/blog" }
+	];
 	$: if ($navigating) changeDir($navigating);
 
 	const changeDir = (nav: any) => {
-		const from = routes.indexOf(nav.from?.route.id);
-		const to = routes.indexOf(nav.to?.route.id);
+		const from = routes.map((x) => x.path).indexOf(nav.from?.route.id);
+		const to = routes.map((x) => x.path).indexOf(nav.to?.route.id);
 
 		direction = from > to ? -1 : 1;
 	};
 </script>
 
 <header class="flex gap-5 py-8">
-	<a href="/" class="link pr-4">me</a>
-	<a href="/folio" class="link pr-4">folio</a>
-	<a href="/blog" class="link pr-4">blog</a>
+	{#each routes as route}
+		<a href={route.path} class="link pr-4">{route.name}</a>
+	{/each}
 </header>
 {#key data.pathname}
 	<main in:fly={{ x: 10 * direction, duration: 200, delay: 200 }} out:fly={{ x: -10 * direction, duration: 200 }}>
