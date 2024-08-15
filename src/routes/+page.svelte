@@ -9,17 +9,12 @@
 	let ageInterval: number;
 
 	const updateAge = () => {
-		// could just get age then increment on interval
-		age = (
-			DateTime.now()
-				.diff(DateTime.local(2005, 8, 20))
-				.toMillis() /
-			1000 /
-			60 /
-			60 /
-			24 /
-			365
-		).toFixed(9);
+		const birthday = { year: 2005, month: 8, day: 20 };
+		const yearAge = DateTime.local().year - birthday.year - 1;
+		const lastBirthday = DateTime.local(DateTime.local().year - 1, birthday.month, birthday.day + (DateTime.local().isInLeapYear ? 1 : 0));
+		const ageProgress = DateTime.local().diff(lastBirthday);
+
+		age = (yearAge + ageProgress.shiftTo("years").years).toFixed(9);
 	};
 
 	onMount(() => {
