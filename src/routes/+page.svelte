@@ -5,6 +5,16 @@
 	import { DateTime } from "luxon";
 	import { onDestroy, onMount } from "svelte";
 
+	const todos = {
+		"interactive old websites slideshow thing": false,
+		"react project": true,
+		"vue project": false,
+		"astro project": false,
+		"solid project": false,
+		"c++ 2d game engine": false,
+		"bad ui makeover (OP's vod websites)": false,
+		"website background": false,
+	}
 	let age: string = "uhhhhhhhhhhh";
 	let ageInterval: number;
 
@@ -33,24 +43,34 @@
 	<title>zane shaw</title>
 </svelte:head>
 
-<div class="flex flex-col gap-4">
-	<div class="flex items-center gap-6">
-		<div class="flex aspect-square h-28 cursor-default items-center justify-center rounded bg-neutral-800 transition-all hover:text-lg">game here</div>
-		<div class="flex flex-col gap-2">
-			<div class="flex gap-1.5">
-				<h1>zane shaw</h1>
-				<StatusIndicator />
-			</div>
-			<div class="flex flex-col">
-				<InfoItem icon="user.svg" alt="user icon" label="squidee" />
-				<InfoItem icon="map-pin.svg" alt="map pin icon" label="melbourne, australia" />
+<div class="flex flex-col gap-12">
+	<div class="flex flex-col gap-4">
+		<div class="flex items-center gap-6">
+			<div class="flex aspect-square h-28 cursor-default items-center justify-center rounded bg-neutral-800 transition-all hover:text-lg">game here</div>
+			<div class="flex flex-col gap-2">
+				<div class="flex gap-1.5">
+					<h1>zane shaw</h1>
+					<StatusIndicator />
+				</div>
+				<div class="flex flex-col">
+					<InfoItem icon="user.svg" alt="user icon" label="squidee" />
+					<InfoItem icon="map-pin.svg" alt="map pin icon" label="melbourne, australia" />
+				</div>
 			</div>
 		</div>
+		<p>
+			yo. i'm an <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll try
+			to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
+		</p>
 	</div>
-	<p>
-		yo. i'm an <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll try
-		to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
-	</p>
+	<div>
+		<h2>todo</h2>
+		<div class="font-mono">
+			{#each Object.entries(todos) as [name, status]}
+				<p>[{status ? "x" : " "}] {name}</p>
+			{/each}
+		</div>
+	</div>
 	<div class="flex justify-end gap-10">
 		<SocialLink icon="mail.svg" alt="mail icon">zane &lbrace;at&rbrace; squidee.dev</SocialLink>
 		<SocialLink url="https://github.com/zaneshaw" icon="github.svg" alt="github logo">github</SocialLink>

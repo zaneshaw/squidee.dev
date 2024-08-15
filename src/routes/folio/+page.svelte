@@ -8,7 +8,6 @@
 </svelte:head>
 
 <h1>folio</h1>
-<p>&sol;&sol; todo: interactive old websites slideshow thing</p>
 <div class="flex flex-col gap-10">
 	{#each { length: 6 } as _}
 		<Project
