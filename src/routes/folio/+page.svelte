@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Badge from "$lib/components/Badge.svelte";
 	import Project from "$lib/components/Project.svelte";
 	import TechStackIcon from "$lib/components/TechStackIcon.svelte";
 </script>
@@ -23,10 +24,20 @@
 		name="Workout Composer"
 		description="automate your exercise. input exercises and your entire workout will be tracked for you."
 		imageSrc="folio/workout-composer1.png"
-		imageAlt="screenshot of squidee.dev"
+		imageAlt="screenshot of Workout Composer"
 		demoURL="https://workoutcomposer.squidee.dev"
 		sourceURL="https://github.com/zaneshaw/workout-composer"
 	>
 		<TechStackIcon name="react" icon="logos/react.svg" alt="react logo" />
+	</Project>
+	<Project
+		name="NMPM"
+		description={`Norditech Maintenance Procedure Manager. unofficial software made for a school project.`}
+		imageSrc="folio/nmpm2.png"
+		imageAlt="screenshot of NMPM"
+	>
+		<Badge label="private" color="yellow" />
+		<TechStackIcon name="tauri" icon="logos/tauri.svg" alt="tauri logo" />
+		<TechStackIcon name="svelte" icon="logos/svelte.svg" alt="svelte logo" />
 	</Project>
 </div>

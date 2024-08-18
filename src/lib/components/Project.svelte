@@ -3,8 +3,8 @@
 	export let description: string;
 	export let imageSrc: string;
 	export let imageAlt: string;
-	export let demoURL: string;
-	export let sourceURL: string;
+	export let demoURL: string | undefined = undefined;
+	export let sourceURL: string | undefined = undefined;
 </script>
 
 <div class="group flex overflow-hidden rounded p-2 pr-0 ring-1 ring-transparent transition-all hover:ring-neutral-700">
@@ -15,14 +15,18 @@
 		<div class="flex justify-between gap-5">
 			<h2 class="truncate">{name}</h2>
 			<div class="flex shrink-0 gap-8">
-				<a href={demoURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
-					<h2 class="link font-normal">demo</h2>
-					<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
-				</a>
-				<a href={sourceURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
-					<h2 class="link font-normal">source</h2>
-					<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
-				</a>
+				{#if demoURL}
+					<a href={demoURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
+						<h2 class="link font-normal">demo</h2>
+						<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
+					</a>
+				{/if}
+				{#if sourceURL}
+					<a href={sourceURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
+						<h2 class="link font-normal">source</h2>
+						<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
+					</a>
+				{/if}
 			</div>
 		</div>
 		<p class="line-clamp-2 break-words leading-tight text-neutral-400 transition-colors group-hover:text-neutral-300">
