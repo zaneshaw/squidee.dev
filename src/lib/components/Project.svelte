@@ -1,12 +1,16 @@
 <script lang="ts">
 	export let name: string;
 	export let description: string;
+	export let imageSrc: string;
+	export let imageAlt: string;
 	export let demoURL: string;
 	export let sourceURL: string;
 </script>
 
 <div class="group flex overflow-hidden rounded p-2 pr-0 ring-1 ring-transparent transition-all hover:ring-neutral-700">
-	<div class="flex aspect-square h-32 cursor-default items-center justify-center rounded bg-neutral-800 transition-all group-hover:text-lg">image here</div>
+	<div class="flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800">
+		<img src={imageSrc} alt={imageAlt} class="h-full w-full object-cover transition-[height,width] group-hover:h-[120%] group-hover:w-[120%]" />
+	</div>
 	<div class="relative flex w-full flex-col gap-2 overflow-auto px-4 py-3">
 		<div class="flex justify-between gap-5">
 			<h2 class="truncate">{name}</h2>

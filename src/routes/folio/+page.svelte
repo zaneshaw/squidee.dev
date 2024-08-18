@@ -9,15 +9,24 @@
 
 <h1>folio</h1>
 <div class="flex flex-col gap-10">
-	{#each { length: 6 } as _}
-		<Project
-			name="a project that exists."
-			description="a description of the project. a description of the project. a description of the project."
-			demoURL=""
-			sourceURL=""
-		>
-			<TechStackIcon name="svelte" icon="svelte.svg" alt="svelte logo" />
-			<TechStackIcon name="netlify" icon="netlify.svg" alt="netlify logo" />
-		</Project>
-	{/each}
+	<Project
+		name="squidee.dev"
+		description="this website. i use it to put all my stuff in one place."
+		imageSrc="folio/squidee-dev.png"
+		imageAlt="screenshot of squidee.dev"
+		demoURL="https://squidee.dev"
+		sourceURL="https://github.com/zaneshaw/squidee.dev"
+	>
+		<TechStackIcon name="svelte" icon="logos/svelte.svg" alt="svelte logo" />
+	</Project>
+	<Project
+		name="Workout Composer"
+		description="automate your exercise. input exercises and your entire workout will be tracked for you."
+		imageSrc="folio/workout-composer1.png"
+		imageAlt="screenshot of squidee.dev"
+		demoURL="https://workoutcomposer.squidee.dev"
+		sourceURL="https://github.com/zaneshaw/workout-composer"
+	>
+		<TechStackIcon name="react" icon="logos/react.svg" alt="react logo" />
+	</Project>
 </div>
