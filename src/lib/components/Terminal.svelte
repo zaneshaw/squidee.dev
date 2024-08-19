@@ -15,64 +15,44 @@
 	let output: HTMLElement;
 	let input: HTMLInputElement;
 
-	const submit = () => {
+	const submit = async () => {
 		const message = input.value.trim();
-		const responses: string[] = [];
 		if (locked || message == "") return;
 		history = [...history, "", `> ${message}`];
 		locked = true;
 
-		setTimeout(() => {
-			// todo: server sided command validation
-			if (message == "help") {
-				responses.push("what? what do you want?!");
-				responses.push("btw, there are secrets (type `help secrets`)");
-			} else if (message == "help secrets") {
-				let secretsFound = 0;
-				const saved = localStorage.getItem("secrets");
-				if (saved != null) secretsFound = JSON.parse(saved).length;
-
-				responses.push(`(${secretsFound}/5 secrets)`);
-				responses.push("you can find secrets both on this website and my other projects in the folio tab.");
-				responses.push("all secrets can be found in plain text without digging into the code.");
-				responses.push("when you find a secret, type it in the console. here, try this one:");
-				responses.push("2ae40f");
-			} else if (message == "2ae40f") {
-				responses.push(...registerSecret("2ae40f"));
-			} else {
-				responses.push("unknown command!!");
+		const response = await fetch("/api/command", {
+			method: "POST",
+			body: JSON.stringify({ command: message.toLowerCase(), secrets: localStorage.getItem("secrets") }),
+			headers: {
+				"content-type": "application/json"
 			}
+		});
 
-			history = [...history, ...responses];
-			locked = false;
-			scrollBottom();
-		}, 100);
+		const res = await response.json();
+		console.log(res);
+
+		if (res.action == "secret_new") {
+			registerSecret(message);
+		}
+
+		history = [...history, ...res.messages];
+		locked = false;
+		scrollBottom();
 
 		input.value = "";
 
 		scrollBottom();
 	};
 
-	const registerSecret = (secret: string): string[] => {
+	const registerSecret = (secret: string) => {
 		let secrets: string[] = [];
-		const responses = [];
 		const saved = localStorage.getItem("secrets");
 		if (saved != null) secrets = JSON.parse(saved);
 
-		const index = secrets.indexOf(secret);
-		if (index > -1) {
-			responses.push("you already found this code :/");
-		} else {
-			secrets.push(secret);
-			if (secret == "2ae40f") {
-				responses.push('congrats! you "found" a code. (this one does nothing :D)');
-			} else {
-				responses.push("congrats! you found a code.");
-			}
-		}
+		secrets.push(secret);
 
 		localStorage.setItem("secrets", JSON.stringify(secrets));
-		return responses;
 	};
 
 	const open = () => {
