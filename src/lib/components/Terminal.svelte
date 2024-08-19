@@ -12,28 +12,31 @@
 		"welcome! this website has a terminal (for some reason).",
 		"type `help` to get started:"
 	];
+	let commandHistory: string[] = [];
+	let commandHistorySeek: number;
 	let output: HTMLElement;
 	let input: HTMLInputElement;
 
 	const submit = async () => {
-		const message = input.value.trim();
-		if (locked || message == "") return;
-		history = [...history, "", `> ${message}`];
+		const command = input.value.trim();
+		if (locked || command == "") return;
+		history = [...history, "", `> ${command}`];
+		commandHistory = [...commandHistory, command];
+		commandHistorySeek = commandHistory.length;
 		locked = true;
 
 		const response = await fetch("/api/command", {
 			method: "POST",
-			body: JSON.stringify({ command: message.toLowerCase(), secrets: localStorage.getItem("secrets") }),
+			body: JSON.stringify({ command: command.toLowerCase(), secrets: localStorage.getItem("secrets") }),
 			headers: {
 				"content-type": "application/json"
 			}
 		});
 
 		const res = await response.json();
-		console.log(res);
 
 		if (res.action == "secret_new") {
-			registerSecret(message);
+			registerSecret(command);
 		}
 
 		history = [...history, ...res.messages];
@@ -53,6 +56,24 @@
 		secrets.push(secret);
 
 		localStorage.setItem("secrets", JSON.stringify(secrets));
+	};
+
+	const scrollHistory = (direction: number) => {
+		if (direction == -1) {
+			commandHistorySeek -= 1;
+			if (commandHistorySeek < 0) commandHistorySeek = 0;
+		} else if (direction == 1) {
+			commandHistorySeek += 1;
+			if (commandHistorySeek > commandHistory.length - 1) commandHistorySeek = commandHistory.length - 1;
+		}
+
+		if (commandHistory[commandHistorySeek] != undefined) {
+			input.value = commandHistory[commandHistorySeek];
+
+			setTimeout(() => {
+				input.selectionStart = input.selectionEnd = 10000;
+			}, 0);
+		}
 	};
 
 	const open = () => {
@@ -100,6 +121,8 @@
 			bind:this={input}
 			on:keydown={(e) => {
 				if (e.key == "Enter") submit();
+				if (e.key == "ArrowUp") scrollHistory(-1);
+				if (e.key == "ArrowDown") scrollHistory(1);
 			}}
 			placeholder="enter command..."
 			type="text"
