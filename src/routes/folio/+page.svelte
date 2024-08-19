@@ -31,6 +31,14 @@
 		<TechStackIcon name="react" icon="logos/react.svg" alt="react logo" />
 	</Project>
 	<Project
+		name="squidpaste"
+		description="free, anonymous service for hosting plain text. yummy."
+		imageSrc="comingsoon"
+		sourceURL="https://github.com/zaneshaw/squidpaste"
+	>
+		<TechStackIcon name="vue" icon="logos/vue.svg" alt="vue logo" />
+	</Project>
+	<Project
 		name="NMPM"
 		description={`Norditech Maintenance Procedure Manager. unofficial software made for a school project.`}
 		imageSrc="folio/nmpm2.png"
