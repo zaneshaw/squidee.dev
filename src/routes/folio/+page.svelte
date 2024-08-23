@@ -13,7 +13,7 @@
 	<Project
 		name="squidee.dev"
 		description="this website. i use it to put all my stuff in one place."
-		imageSrc="folio/squidee-dev.png"
+		imageSrc="/folio/squidee-dev.png"
 		imageAlt="screenshot of squidee.dev"
 		demoURL="https://squidee.dev"
 		sourceURL="https://github.com/zaneshaw/squidee.dev"
@@ -23,7 +23,7 @@
 	<Project
 		name="Workout Composer"
 		description="automate your exercise. input exercises and your entire workout will be tracked for you."
-		imageSrc="folio/workout-composer1.png"
+		imageSrc="/folio/workout-composer1.png"
 		imageAlt="screenshot of Workout Composer"
 		demoURL="https://workoutcomposer.squidee.dev"
 		sourceURL="https://github.com/zaneshaw/workout-composer"
@@ -41,7 +41,7 @@
 	<Project
 		name="NMPM"
 		description={`Norditech Maintenance Procedure Manager. unofficial software made for a school project.`}
-		imageSrc="folio/nmpm2.png"
+		imageSrc="/folio/nmpm2.png"
 		imageAlt="screenshot of NMPM"
 	>
 		<Badge label="private" color="yellow" />

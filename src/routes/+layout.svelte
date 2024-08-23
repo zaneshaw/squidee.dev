@@ -14,11 +14,16 @@
 	];
 	$: if ($navigating) changeDir($navigating);
 
+	// todo: allow anchors to call this?? idk
 	const changeDir = (nav: any) => {
 		const from = routes.map((x) => x.path).indexOf(nav.from?.route.id);
 		const to = routes.map((x) => x.path).indexOf(nav.to?.route.id);
 
-		direction = from > to ? -1 : 1;
+		if (to >= 0) {
+			direction = from > to ? -1 : 1;
+		} else {
+			direction = 1;
+		}
 	};
 </script>
 

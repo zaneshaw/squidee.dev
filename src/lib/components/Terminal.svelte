@@ -106,7 +106,7 @@
 			<div class="flex justify-between bg-neutral-700/70 text-neutral-400">
 				<span class="my-auto px-2">squid terminal v1</span>
 				<button on:click={close}>
-					<img src="x.svg" alt="close icon" />
+					<img src="/x.svg" alt="close icon" />
 				</button>
 			</div>
 			<div bind:this={output} class="flex h-[12.05rem] overflow-y-auto px-1">
@@ -131,6 +131,6 @@
 	</div>
 {:else}
 	<button transition:fly={{ x: -15, duration: 250 }} on:click={open} class="fixed bottom-0 left-0 p-2">
-		<img src="square-terminal.svg" alt="terminal icon" />
+		<img src="/square-terminal.svg" alt="terminal icon" />
 	</button>
 {/if}

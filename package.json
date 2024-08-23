@@ -29,6 +29,9 @@
 	"type": "module",
 	"dependencies": {
 		"@types/luxon": "^3.4.2",
-		"luxon": "^3.4.4"
+		"@types/markdown-it": "^14.1.2",
+		"luxon": "^3.4.4",
+		"markdown-it": "^14.1.0",
+		"pocketbase": "^0.21.4"
 	}
 }
