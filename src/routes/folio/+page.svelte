@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Badge from "$lib/components/Badge.svelte";
 	import Project from "$lib/components/Project.svelte";
-	import TechStackIcon from "$lib/components/TechStackIcon.svelte";
 </script>
 
 <svelte:head>
@@ -18,7 +17,9 @@
 		demoURL="https://squidee.dev"
 		sourceURL="https://github.com/zaneshaw/squidee.dev"
 	>
-		<TechStackIcon name="svelte" icon="logos/svelte.svg" alt="svelte logo" />
+		<Badge label="svelte">
+			<img src={"logos/svelte.svg"} alt="svelte logo" class="w-4" />
+		</Badge>
 	</Project>
 	<Project
 		name="Workout Composer"
@@ -28,7 +29,9 @@
 		demoURL="https://workoutcomposer.squidee.dev"
 		sourceURL="https://github.com/zaneshaw/workout-composer"
 	>
-		<TechStackIcon name="react" icon="logos/react.svg" alt="react logo" />
+		<Badge label="react">
+			<img src={"logos/react.svg"} alt="react logo" class="w-4" />
+		</Badge>
 	</Project>
 	<Project
 		name="squidpaste"
@@ -36,7 +39,9 @@
 		imageSrc="comingsoon"
 		sourceURL="https://github.com/zaneshaw/squidpaste"
 	>
-		<TechStackIcon name="vue" icon="logos/vue.svg" alt="vue logo" />
+		<Badge label="vue">
+			<img src={"logos/vue.svg"} alt="vue logo" class="w-4" />
+		</Badge>
 	</Project>
 	<Project
 		name="NMPM"
@@ -45,7 +50,11 @@
 		imageAlt="screenshot of NMPM"
 	>
 		<Badge label="private" color="yellow" />
-		<TechStackIcon name="tauri" icon="logos/tauri.svg" alt="tauri logo" />
-		<TechStackIcon name="svelte" icon="logos/svelte.svg" alt="svelte logo" />
+		<Badge label="tauri">
+			<img src={"logos/tauri.svg"} alt="tauri logo" class="w-4" />
+		</Badge>
+		<Badge label="svelte">
+			<img src={"logos/svelte.svg"} alt="svelte logo" class="w-4" />
+		</Badge>
 	</Project>
 </div>
