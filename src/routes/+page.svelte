@@ -13,8 +13,8 @@
 		"solid project": false,
 		"c++ 2d game engine": false,
 		"bad ui makeover (OP's vod websites)": false,
-		"website background": false,
-	}
+		"website background": false
+	};
 	let age: string = "uhhhhhhhhhhh";
 	let ageInterval: number;
 
@@ -59,10 +59,11 @@
 			</div>
 		</div>
 		<p>
-			yo. i'm an <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll try
-			to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
+			yo. i'm an <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll
+			try to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
 		</p>
 	</div>
+	<div></div>
 	<div>
 		<h2>todo</h2>
 		<div class="font-mono">
