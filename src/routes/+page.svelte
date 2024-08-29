@@ -8,7 +8,7 @@
 	const todos = {
 		"interactive old websites slideshow thing": false,
 		"react project": true,
-		"vue project": false,
+		"vue project": true,
 		"astro project": false,
 		"solid project": false,
 		"c++ 2d game engine": false,
@@ -46,7 +46,9 @@
 <div class="flex flex-col gap-12">
 	<div class="flex flex-col gap-4">
 		<div class="flex items-center gap-6">
-			<div class="flex aspect-square h-28 cursor-default items-center justify-center rounded bg-neutral-800 transition-all hover:text-lg">game here</div>
+			<a href="/game">
+				<div class="flex aspect-square h-28 items-center justify-center rounded bg-neutral-800 transition-all hover:text-lg">game here</div>
+			</a>
 			<div class="flex flex-col gap-2">
 				<div class="flex gap-1.5">
 					<h1>zane shaw</h1>

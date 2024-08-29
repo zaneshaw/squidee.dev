@@ -19,7 +19,7 @@
 
 <svelte:window on:mousemove={onMouseMove} />
 
-<div bind:this={cursorArea} class="pointer-events-none absolute left-1/2 top-[45px] h-[840px] w-[840px] -translate-x-1/2" />
+<div bind:this={cursorArea} class="center-x pointer-events-none absolute top-[45px] h-[840px] w-[840px]" />
 
 <h1>folio</h1>
 <div class="flex flex-col gap-10">
