@@ -26,7 +26,7 @@
 	<div class="group flex overflow-hidden rounded p-2 pr-0 ring-1 ring-transparent transition-all hover:ring-neutral-700">
 		<div class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800">
 			<img src="/folio/squidee-dev-thumb2.png" alt="screenshot of this website" />
-			<img src="/cursor.png" alt="" bind:this={cursor} class="absolute left-0 top-0 w-[2px]" />
+			<img src="/cursor.png" alt="" bind:this={cursor} class="absolute left-0 top-0 w-[3px]" />
 		</div>
 		<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-3">
 			<div class="flex justify-between gap-5">
