@@ -17,7 +17,7 @@
 			<img src={imageSrc} alt={imageAlt} class="h-full w-full object-cover transition-[height,width] group-hover:h-[120%] group-hover:w-[120%]" />
 		{/if}
 	</div>
-	<div class="relative flex w-full flex-col gap-2 overflow-auto px-4 py-3">
+	<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-3">
 		<div class="flex justify-between gap-5">
 			<h2 class="truncate">{name}</h2>
 			<div class="flex shrink-0 gap-8">
@@ -38,7 +38,7 @@
 		<p class="line-clamp-2 break-words leading-tight text-neutral-400 transition-colors group-hover:text-neutral-300">
 			{description}
 		</p>
-		<div class="absolute bottom-0 right-0 flex gap-1 p-[inherit]">
+		<div class="absolute -bottom-2 right-0 flex gap-1 p-[inherit]">
 			<slot />
 		</div>
 	</div>
