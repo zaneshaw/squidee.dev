@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
+	import BlogCard from "$lib/components/BlogCard.svelte";
 
 	export let data: PageData;
 </script>
@@ -16,30 +17,7 @@
 	</label>
 	<div class="flex flex-col items-center">
 		{#each data.posts as post}
-			<a href="/blog/{post}" class="group relative flex w-full cursor-pointer flex-col py-4 transition-all hover:pb-8">
-				<div class="flex justify-between gap-5">
-					<div>
-						<h2 class="relative font-normal text-neutral-300 transition-colors group-hover:text-white">{post}</h2>
-						<p class="line-clamp-2 break-all text-neutral-400 transition-colors group-hover:text-neutral-300">this a descriptive description</p>
-					</div>
-					<span class="flex-shrink-0 font-light text-neutral-300 transition-colors group-hover:text-white">3 aug</span>
-				</div>
-
-				<span class="absolute bottom-1 text-neutral-300 opacity-0 transition-all group-hover:opacity-100">read &rarr;</span>
-			</a>
-		{/each}
-		{#each { length: 5 } as _}
-			<div class="group relative flex w-full cursor-pointer flex-col py-4 transition-all hover:pb-8">
-				<div class="flex justify-between gap-5">
-					<div>
-						<h2 class="relative font-normal text-neutral-300 transition-colors group-hover:text-white">this is a blog post</h2>
-						<p class="line-clamp-2 break-all text-neutral-400 transition-colors group-hover:text-neutral-300">this a descriptive description</p>
-					</div>
-					<span class="flex-shrink-0 font-light text-neutral-300 transition-colors group-hover:text-white">3 aug</span>
-				</div>
-
-				<span class="absolute bottom-1 text-neutral-300 opacity-0 transition-all group-hover:opacity-100">read &rarr;</span>
-			</div>
+			<BlogCard {post} />
 		{/each}
 	</div>
 </div>

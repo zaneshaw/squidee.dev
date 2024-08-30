@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		const content = await (await fetch(url)).text();
 
 		return {
-			title: post.slug,
+			post,
 			content
 		};
 	} catch {
