@@ -1,11 +1,13 @@
 <script lang="ts">
 	import "../app.postcss";
-	import { fly } from "svelte/transition";
+	import { fade, fly } from "svelte/transition";
 	import { navigating } from "$app/stores";
+	import { progress, loading, increaseProgress } from "$lib/stores/loading";
 	import Terminal from "$lib/components/Terminal.svelte";
 
 	export let data;
 
+	let progressInterval: number;
 	let direction: number;
 	let routes = [
 		{ name: "me", path: "/" },
@@ -13,9 +15,27 @@
 		{ name: "blog", path: "/blog" },
 		{ name: "game", path: "/game" }
 	];
-	$: if ($navigating) changeDir($navigating);
+	$: if ($navigating) {
+		changeDir($navigating);
 
-	// todo: allow anchors to call this?? idk
+		if ($navigating.from?.route.id != $navigating.to?.route.id) {
+			$loading = true;
+			setTimeout(() => {
+				increaseProgress(0.1, 0.2);
+			}, 1);
+			setTimeout(() => {
+				progressInterval = setInterval(() => {
+					increaseProgress(0.02, 0.08);
+				}, 700); // todo: random interval
+			}, 300);
+		}
+	}
+	$: if (!$navigating) {
+		clearInterval(progressInterval);
+		$progress = 1;
+	}
+
+	// todo: allow anchors to call this?? idk. custom link component?
 	const changeDir = (nav: any) => {
 		const from = routes.map((x) => x.path).indexOf(nav.from?.route.id);
 		const to = routes.map((x) => x.path).indexOf(nav.to?.route.id);
@@ -27,6 +47,10 @@
 		}
 	};
 </script>
+
+{#if $loading}
+	<div out:fade={{ duration: 500, delay: 200 }} style="width: {$progress * 100}%;" class="fixed left-0 top-0 z-50 h-0.5 bg-white transition-[width]" />
+{/if}
 
 <header class="flex gap-5 py-8">
 	{#each routes as route}
