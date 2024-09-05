@@ -12,8 +12,7 @@
 	let routes = [
 		{ name: "me", path: "/" },
 		{ name: "folio", path: "/folio" },
-		{ name: "blog", path: "/blog" },
-		{ name: "game", path: "/game" }
+		{ name: "blog", path: "/blog" }
 	];
 	$: if ($navigating) {
 		changeDir($navigating);

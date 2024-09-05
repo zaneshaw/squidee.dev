@@ -46,8 +46,11 @@
 <div class="flex flex-col gap-12">
 	<div class="flex flex-col gap-4">
 		<div class="flex items-center gap-6">
-			<a href="/game">
-				<div class="flex aspect-square h-28 items-center justify-center rounded bg-neutral-800 transition-all hover:text-lg">game here</div>
+			<a href="https://game.squidee.dev" target="_blank">
+				<div class="relative h-28 w-28 items-center justify-center overflow-hidden rounded ring-1 ring-neutral-600">
+					<iframe src="https://game.squidee.dev" title="game" class="pointer-events-none h-[800%] w-[800%] origin-top-left scale-[12.5%]"></iframe>
+					<span class="center-x center-y absolute -z-10 font-semibold">loading...</span>
+				</div>
 			</a>
 			<div class="flex flex-col gap-2">
 				<div class="flex gap-1.5">
