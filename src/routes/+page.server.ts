@@ -7,7 +7,7 @@ interface TodoItem {
 }
 const todoOrder = ["doing", "planned", "done"];
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async () => {
 	return {
 		streamed: {
 			todos: getTodos()
