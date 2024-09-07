@@ -73,18 +73,23 @@
 	</div>
 	<div></div>
 	<div>
-		<h2>todo</h2>
+		<div class="flex items-end gap-3">
+			<h2>todo</h2>
+			<div class="mb-1 flex gap-2 text-xs">
+				<span class="cursor-pointer font-semibold text-white">2024</span>
+				<span class="cursor-pointer">2023</span>
+			</div>
+		</div>
 		<div class="font-mono">
 			{#await data.streamed.todos}
 				loading todos...
 			{:then todos}
 				{#each todos as item}
-					<p>[{item.completed ? "x" : " "}] {item.name}</p>
+					<p>[{item.status == "doing" ? "-" : item.status == "done" ? "x" : " "}] {item.name}</p>
 				{/each}
 			{:catch error}
 				<p>error loading todos: {error.message}</p>
 			{/await}
-
 		</div>
 	</div>
 	<div class="flex justify-end gap-10">
