@@ -4,6 +4,9 @@
 	import StatusIndicator from "$lib/components/StatusIndicator.svelte";
 	import { DateTime } from "luxon";
 	import { onDestroy, onMount } from "svelte";
+	import type { PageData } from "./$types";
+
+	export let data: PageData;
 
 	const todos = {
 		"interactive old websites slideshow thing": false,
@@ -46,9 +49,9 @@
 <div class="flex flex-col gap-12">
 	<div class="flex flex-col gap-4">
 		<div class="flex items-center gap-6">
-			<a href="https://game.squidee.dev" target="_blank">
+			<a href="/game">
 				<div class="relative h-28 w-28 items-center justify-center overflow-hidden rounded ring-1 ring-neutral-600">
-					<iframe src="https://game.squidee.dev" title="game" class="pointer-events-none h-[800%] w-[800%] origin-top-left scale-[12.5%]"></iframe>
+					<iframe src="/game" title="game" class="pointer-events-none h-[800%] w-[800%] origin-top-left scale-[12.5%]"></iframe>
 					<span class="center-x center-y absolute -z-10 font-semibold">loading...</span>
 				</div>
 			</a>
@@ -72,9 +75,16 @@
 	<div>
 		<h2>todo</h2>
 		<div class="font-mono">
-			{#each Object.entries(todos) as [name, status]}
-				<p>[{status ? "x" : " "}] {name}</p>
-			{/each}
+			{#await data.streamed.todos}
+				loading todos...
+			{:then todos}
+				{#each todos as item}
+					<p>[{item.completed ? "x" : " "}] {item.name}</p>
+				{/each}
+			{:catch error}
+				<p>error loading todos: {error.message}</p>
+			{/await}
+
 		</div>
 	</div>
 	<div class="flex justify-end gap-10">
