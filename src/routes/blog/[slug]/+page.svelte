@@ -12,9 +12,9 @@
 <div class="flex flex-col gap-6">
 	<div class="flex flex-col gap-1">
 		<h1>{data.post.title}</h1>
-		<div class="flex gap-3 text-sm text-neutral-500">
+		<div class="flex gap-3 text-sm text-neutral-400">
 			<span>{DateTime.fromJSDate(new Date(data.post.updated)).toFormat("d MMMM y")}</span>
-			<div class="my-auto h-4 w-0.5 bg-neutral-800"></div>
+			<div class="my-auto h-4 w-px bg-neutral-700" />
 			<span>edited {DateTime.fromJSDate(new Date(data.post.updated)).toRelative()}</span>
 		</div>
 	</div>
