@@ -46,17 +46,16 @@
 	<title>zane shaw</title>
 </svelte:head>
 
-<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-6">
 	<div class="flex flex-col gap-4">
 		<div class="flex items-center gap-6">
-			<a href="/game">
+			<div>
 				<div class="relative h-28 w-28 items-center justify-center overflow-hidden rounded ring-1 ring-neutral-600">
-					<iframe src="/game" title="game" class="pointer-events-none h-[800%] w-[800%] origin-top-left scale-[12.5%]"></iframe>
-					<span class="center-x center-y absolute -z-10 font-semibold">loading...</span>
+					<img src="badgarf.png" alt="@PfpDrawer" title="@PfpDrawer" />
 				</div>
-			</a>
+			</div>
 			<div class="flex flex-col gap-2">
-				<div class="flex gap-1.5">
+				<div class="flex gap-3">
 					<h1>zane shaw</h1>
 					<StatusIndicator />
 				</div>
@@ -67,17 +66,16 @@
 			</div>
 		</div>
 		<p>
-			yo. i'm an <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll
-			try to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
+			yo. i'm a <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll try
+			to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
 		</p>
 	</div>
-	<div></div>
 	<div>
 		<div class="flex items-end gap-3">
 			<h2>todo</h2>
 			<div class="mb-1 flex gap-2 text-xs">
+				<span class="cursor-pointer">2025</span>
 				<span class="cursor-pointer font-semibold text-white">2024</span>
-				<span class="cursor-pointer">2023</span>
 			</div>
 		</div>
 		<div class="font-mono">

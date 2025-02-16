@@ -48,7 +48,7 @@
 </script>
 
 {#if $loading}
-	<div out:fade={{ duration: 500, delay: 200 }} style="width: {$progress * 100}%;" class="fixed left-0 top-0 z-50 h-0.5 bg-white transition-[width]" />
+	<div out:fade={{ duration: 300, delay: 100 }} style="width: {$progress * 100}%;" class="fixed left-0 top-0 z-50 h-0.5 bg-white transition-[width]" />
 {/if}
 
 <header class="flex gap-5 py-8">

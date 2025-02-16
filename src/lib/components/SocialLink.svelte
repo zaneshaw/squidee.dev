@@ -14,7 +14,7 @@
 			</div>
 		</a>
 	{:else}
-		<span class="group flex gap-2 cursor-default">
+		<span class="group flex gap-2">
 			<img src={icon} {alt} class="w-5" />
 			<span class="transition-[color] group-hover:text-white"><slot /></span>
 		</span>
