@@ -6,8 +6,8 @@
 	let cursorArea: HTMLDivElement;
 
 	function onMouseMove(e: MouseEvent) {
-		const x = e.clientX - cursorArea.offsetLeft + 840 / 2 + scrollX;
-		const y = e.clientY - cursorArea.offsetTop + scrollY;
+		const x = (e.clientX - cursorArea.offsetLeft + 840 / 2 + scrollX) * 1.02;
+		const y = (e.clientY - cursorArea.offsetTop + scrollY) * 1.02;
 
 		cursor.style.transform = `translate(${x * 0.15}px,${y * 0.15}px)`;
 	}
@@ -21,10 +21,10 @@
 
 <div bind:this={cursorArea} class="center-x pointer-events-none absolute top-[45px] h-[840px] w-[840px]" />
 
-<h1>folio</h1>
-<div class="flex flex-col gap-10">
-	<div class="group flex overflow-hidden rounded p-2 pr-0 ring-1 ring-transparent transition-all hover:ring-neutral-700">
-		<div class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800">
+<h1 class="mb-5">folio</h1>
+<div class="flex flex-col gap gap-10">
+	<div class="group flex rounded ring-1 ring-transparent transition-all">
+		<div class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700">
 			<img src="/folio/squidee-dev-thumb2.png" alt="screenshot of this website" />
 			<img src="/cursor.png" alt="" bind:this={cursor} class="absolute left-0 top-0 w-[3px]" />
 		</div>

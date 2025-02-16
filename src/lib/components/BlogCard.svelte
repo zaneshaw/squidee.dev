@@ -15,11 +15,7 @@
 			</div>
 		</div>
 		<div class="relative flex flex-shrink-0 flex-col font-light">
-			<p class="line-clamp-2 break-all text-neutral-400 transition-colors group-hover:text-neutral-300">
-				this a descriptive description this a descriptive description this a descriptive description this a descriptive description this a descriptive
-				description this a descriptive description this a descriptive description this a descriptive description this a descriptive description this a
-				descriptive description this a descriptive description this a descriptive description this a descriptive description this a descriptive description
-			</p>
+			<p class="line-clamp-2 break-all text-neutral-400 transition-colors group-hover:text-neutral-300">{post.blurb}</p>
 		</div>
 	</div>
 	<span class="absolute bottom-1 text-neutral-300 opacity-0 transition-all group-hover:opacity-100">read &rarr;</span>

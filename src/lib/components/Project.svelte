@@ -7,8 +7,10 @@
 	export let sourceURL: string | undefined = undefined;
 </script>
 
-<div class="group flex overflow-hidden rounded p-2 pr-0 ring-1 ring-transparent transition-all hover:ring-neutral-700">
-	<div class="flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800">
+<div class="group flex rounded ring-1 ring-transparent transition-all">
+	<div
+		class="flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700"
+	>
 		{#if imageSrc == "comingsoon"}
 			<span class="animate-pulse">coming soon...</span>
 		{:else if imageSrc == undefined}
