@@ -15,12 +15,11 @@
 			</div>
 		</div>
 		<div class="relative flex flex-shrink-0 flex-col font-light">
-			<p class="line-clamp-3 break-all text-neutral-400 transition-colors group-hover:text-neutral-300">
+			<p class="line-clamp-2 break-all text-neutral-400 transition-colors group-hover:text-neutral-300">
 				this a descriptive description this a descriptive description this a descriptive description this a descriptive description this a descriptive
 				description this a descriptive description this a descriptive description this a descriptive description this a descriptive description this a
 				descriptive description this a descriptive description this a descriptive description this a descriptive description this a descriptive description
 			</p>
-			<div class="absolute bottom-0 h-3/5 w-full bg-gradient-to-t from-neutral-950 to-transparent" />
 		</div>
 	</div>
 	<span class="absolute bottom-1 text-neutral-300 opacity-0 transition-all group-hover:opacity-100">read &rarr;</span>
