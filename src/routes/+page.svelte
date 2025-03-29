@@ -67,15 +67,15 @@
 		</div>
 		<p>
 			yo. i'm a <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll try
-			to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> random stuff that i find interesting.
+			to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> about random stuff that i find interesting.
 		</p>
 	</div>
 	<div>
 		<div class="flex items-end gap-3">
 			<h2>todo</h2>
 			<div class="mb-1 flex gap-2 text-xs">
-				<span class="cursor-pointer">2025</span>
-				<span class="cursor-pointer font-semibold text-white">2024</span>
+				<span class="cursor-pointer font-semibold text-white">2025</span>
+				<span class="cursor-pointer">2024</span>
 			</div>
 		</div>
 		<div class="font-mono">
