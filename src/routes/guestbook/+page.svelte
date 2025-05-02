@@ -22,10 +22,10 @@
 				<div class="my-auto h-3.5 w-px bg-neutral-700" />
 				<span class="ml-auto text-neutral-500">{DateTime.fromJSDate(new Date(message.created)).toFormat("DD")}</span>
 			</div>
-			<h2 class="relative font-semibold text-white whitespace-pre-line break-words">{message.message}</h2>
+			<h2 class="relative whitespace-pre-line break-words font-semibold text-white">{message.message}</h2>
 		</div>
 	{/each}
-	<div class="flex flex-col">
+	<div class="flex flex-col gap-1.5">
 		<form method="POST" class="flex flex-col gap-5 rounded p-5 ring-1 ring-white">
 			<h2>leave a message</h2>
 			<div class="flex gap-5">
@@ -51,5 +51,6 @@
 			</label>
 			<button class="btn ml-auto w-fit bg-white py-1 pl-2 pr-4 font-medium text-black transition-[padding] hover:pl-4 hover:pr-2">send -&gt;</button>
 		</form>
+		<span class="px-1 text-sm text-neutral-500">send me an email if you would like your message removed</span>
 	</div>
 </div>
