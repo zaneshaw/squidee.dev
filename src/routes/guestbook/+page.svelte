@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { DateTime } from "luxon";
 	import type { PageData } from "./$types";
+	import autosize from "svelte-autosize";
 
 	export let data: PageData;
 </script>
@@ -47,9 +48,11 @@
 			</div>
 			<label class="flex flex-col">
 				<span class="text-sm">a message</span>
-				<textarea name="message" rows="3" placeholder="this is{'\n'}a cool{'\n'}website!!" required class="input resize-none text-white"></textarea>
+				<textarea use:autosize name="message" rows="1" placeholder="cool website!" required class="input resize-none text-white"></textarea>
 			</label>
-			<button class="btn ml-auto w-fit bg-white py-1 pl-2 pr-4 font-medium text-black transition-[padding] hover:pl-4 hover:pr-2">send -&gt;</button>
+			<button class="btn group ml-auto w-fit bg-white py-1 pl-2 font-medium text-black"
+				>send <span class="pr-4 transition-[padding] group-hover:pl-1 group-hover:pr-3">-&gt;</span></button
+			>
 		</form>
 		<span class="px-1 text-sm text-neutral-500">send me an email if you would like your message removed</span>
 	</div>

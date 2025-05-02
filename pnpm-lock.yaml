@@ -32,6 +32,9 @@ importers:
       pocketbase:
         specifier: ^0.21.4
         version: 0.21.4
+      svelte-autosize:
+        specifier: ^1.1.5
+        version: 1.1.5(svelte@4.2.0)
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.1.0
@@ -432,6 +435,9 @@ packages:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
 
+  '@types/autosize@4.0.3':
+    resolution: {integrity: sha512-o0ZyU3ePp3+KRbhHsY4ogjc+ZQWgVN5h6j8BHW5RII4cFKi6PEKK9QPAcphJVkD0dGpyFnD3VRR0WMvHVjCv9w==}
+
   '@types/cookie@0.5.2':
     resolution: {integrity: sha512-DBpRoJGKJZn7RY92dPrgoMew8xCWc2P71beqsjyhEI/Ds9mOyVmBwtekyfhpwFIVt1WrxTonFifiOZ62V8CnNA==}
 
@@ -477,6 +483,9 @@ packages:
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
+
+  autosize@6.0.1:
+    resolution: {integrity: sha512-f86EjiUKE6Xvczc4ioP1JBlWG7FKrE13qe/DxBCpe8GCipCq2nFw73aO8QEBKHfSbYGDN5eB9jXWKen7tspDqQ==}
 
   axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}
@@ -1096,6 +1105,11 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  svelte-autosize@1.1.5:
+    resolution: {integrity: sha512-whiND/GthFDG9Ansvil21qxmFhSMfuooVZPg40sbcLHYKR9srYhnfrP5qdw8MXHAm6DY9g5PawurOAWl34fK7g==}
+    peerDependencies:
+      svelte: '>=3.0.0'
+
   svelte-check@3.5.2:
     resolution: {integrity: sha512-5a/YWbiH4c+AqAUP+0VneiV5bP8YOk9JL3jwvN+k2PEPLgpu85bjQc5eE67+eIZBBwUEJzmO3I92OqKcqbp3fw==}
     hasBin: true
@@ -1481,6 +1495,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@types/autosize@4.0.3': {}
+
   '@types/cookie@0.5.2': {}
 
   '@types/estree@1.0.1': {}
@@ -1522,6 +1538,8 @@ snapshots:
       picocolors: 1.0.0
       postcss: 8.4.30
       postcss-value-parser: 4.2.0
+
+  autosize@6.0.1: {}
 
   axobject-query@3.2.1:
     dependencies:
@@ -2097,6 +2115,12 @@ snapshots:
       ts-interface-checker: 0.1.13
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  svelte-autosize@1.1.5(svelte@4.2.0):
+    dependencies:
+      '@types/autosize': 4.0.3
+      autosize: 6.0.1
+      svelte: 4.2.0
 
   svelte-check@3.5.2(postcss-load-config@4.0.1(postcss@8.4.30))(postcss@8.4.30)(svelte@4.2.0):
     dependencies:
