@@ -1,0 +1,55 @@
+<script lang="ts">
+	import { DateTime } from "luxon";
+	import type { PageData } from "./$types";
+
+	export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>guestbook - zane shaw</title>
+</svelte:head>
+
+<h1 class="mb-5">guestbook</h1>
+<div class="gap flex flex-col gap-10">
+	{#each data.messages as message}
+		<div class="flex w-full flex-col">
+			<div class="flex w-fit items-center gap-2 text-sm">
+				{#if message.link}
+					<span class="text-neutral-400">message from <a href={message.link} class="link px-0.5">{message.author}</a></span>
+				{:else}
+					<span class="text-neutral-400">message from <span class="font-medium text-white">{message.author}</span></span>
+				{/if}
+				<div class="my-auto h-3.5 w-px bg-neutral-700" />
+				<span class="ml-auto text-neutral-500">{DateTime.fromJSDate(new Date(message.created)).toFormat("DD")}</span>
+			</div>
+			<h2 class="relative font-semibold text-white whitespace-pre-line break-words">{message.message}</h2>
+		</div>
+	{/each}
+	<div class="flex flex-col">
+		<form method="POST" class="flex flex-col gap-5 rounded p-5 ring-1 ring-white">
+			<h2>leave a message</h2>
+			<div class="flex gap-5">
+				<label class="flex basis-1/3 flex-col">
+					<span class="text-sm">your name / username</span>
+					<input type="text" name="author" placeholder="..." required class="input text-white" />
+				</label>
+				<label class="flex basis-2/3 flex-col">
+					<span class="text-sm">your personal website <span class="ml-0.5 text-neutral-500">&lpar;optional&rpar;</span></span>
+					<input
+						type="text"
+						name="link"
+						placeholder="https://"
+						pattern="https:\/\/[a-zA-Z0-9.\-]+(\.[a-zA-Z])\S*"
+						title="must be a valid https url :/"
+						class="input text-white"
+					/>
+				</label>
+			</div>
+			<label class="flex flex-col">
+				<span class="text-sm">a message</span>
+				<textarea name="message" rows="3" placeholder="this is{'\n'}a cool{'\n'}website!!" required class="input resize-none text-white"></textarea>
+			</label>
+			<button class="btn ml-auto w-fit bg-white py-1 pl-2 pr-4 font-medium text-black transition-[padding] hover:pl-4 hover:pr-2">send -&gt;</button>
+		</form>
+	</div>
+</div>

@@ -28,6 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@braintree/sanitize-url": "^7.1.1",
 		"@netlify/edge-functions": "^2.10.0",
 		"@sveltejs/adapter-netlify": "^4.3.3",
 		"@types/luxon": "^3.4.2",

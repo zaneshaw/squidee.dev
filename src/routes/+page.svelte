@@ -69,6 +69,9 @@
 			yo. i'm a <span class="font-mono font-semibold text-white">{age}</span> y/o cs undergrad student currently developing games and websites for fun. i'll try
 			to keep my <a href="/folio" class="link">folio</a> up-to-date and might <a href="/blog" class="link">post</a> about random stuff that i find interesting.
 		</p>
+		<p>
+			leave something in the <a href="/guestbook" class="link">guestbook</a> while you're here :D
+		</p>
 	</div>
 	<div>
 		<div class="flex items-end gap-3">
