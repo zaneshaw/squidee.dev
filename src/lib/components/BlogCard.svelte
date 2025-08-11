@@ -9,7 +9,7 @@
 		<div>
 			<h1 class="relative font-semibold text-neutral-300 transition-all group-hover:text-white">{post.title}</h1>
 			<div class="flex w-fit items-center gap-2 text-sm">
-				<span class="ml-auto text-neutral-400 transition-colors group-hover:text-white">{DateTime.fromJSDate(new Date(post.updated)).toFormat("DD")}</span>
+				<span class="ml-auto text-neutral-400 transition-colors group-hover:text-white">{DateTime.fromJSDate(new Date(post.created)).toFormat("DD")}</span>
 				<div class="my-auto h-3.5 w-px bg-neutral-700" />
 				<span class="ml-auto text-neutral-500 transition-colors group-hover:text-neutral-300">2 min read</span>
 			</div>
