@@ -5,19 +5,10 @@
 	import { DateTime } from "luxon";
 	import { onDestroy, onMount } from "svelte";
 	import type { PageData } from "./$types";
+	import TodoListButton from "$lib/components/TodoListButton.svelte";
 
-	export let data: PageData;
-
-	const todos = {
-		"interactive old websites slideshow thing": false,
-		"react project": true,
-		"vue project": true,
-		"astro project": false,
-		"solid project": false,
-		"c++ 2d game engine": false,
-		"bad ui makeover (OP's vod websites)": false,
-		"website background": false
-	};
+	let todoList: any[];
+	let todoListYear: string;
 	let age: string = "uhhhhhhhhhhh";
 	let ageInterval: number;
 
@@ -30,11 +21,21 @@
 		age = (yearAge + ageProgress.shiftTo("years").years).toFixed(9);
 	};
 
+	const loadTodoList = async (year: string) => {
+		todoListYear = year;
+		todoList = null;
+
+		const response = await fetch(`/api/getTodoList?year=${year}`);
+		todoList = await response.json();
+	};
+
 	onMount(() => {
 		updateAge();
 
 		clearInterval(ageInterval);
 		ageInterval = setInterval(updateAge, 50);
+
+		loadTodoList("2025");
 	});
 
 	onDestroy(() => {
@@ -77,20 +78,21 @@
 		<div class="flex items-end gap-3">
 			<h2>todo</h2>
 			<div class="mb-1 flex gap-2 text-xs">
-				<span class="cursor-pointer font-semibold text-white">2025</span>
-				<span class="cursor-pointer">2024</span>
+				<!-- looks good to me ¯\(°_o)/¯ -->
+				<TodoListButton on:click={() => loadTodoList("2025")} year={"2025"} currentYear={todoListYear} />
+				<TodoListButton on:click={() => loadTodoList("2024")} year={"2024"} currentYear={todoListYear} />
 			</div>
 		</div>
 		<div class="font-mono">
-			{#await data.streamed.todos}
-				loading todos...
-			{:then todos}
-				{#each todos as item}
+			{#if todoList != null}
+				{#each todoList as item}
 					<p>[{item.status == "doing" ? "-" : item.status == "done" ? "x" : " "}] {item.name}</p>
+				{:else}
+					<p>error loading todo list :/</p>
 				{/each}
-			{:catch error}
-				<p>error loading todos: {error.message}</p>
-			{/await}
+			{:else}
+				<p>loading todo list...</p>
+			{/if}
 		</div>
 	</div>
 	<div class="flex justify-end gap-10">
