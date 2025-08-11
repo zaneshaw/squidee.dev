@@ -7,10 +7,11 @@
 	import type { PageData } from "./$types";
 	import TodoListButton from "$lib/components/TodoListButton.svelte";
 
-	let todoList: any[];
-	let todoListYear: string;
+	export let data: PageData;
+
 	let age: string = "uhhhhhhhhhhh";
 	let ageInterval: number;
+	let todoListYear: string = "2025";
 
 	const updateAge = () => {
 		const birthday = { year: 2005, month: 8, day: 20 };
@@ -21,21 +22,11 @@
 		age = (yearAge + ageProgress.shiftTo("years").years).toFixed(9);
 	};
 
-	const loadTodoList = async (year: string) => {
-		todoListYear = year;
-		todoList = null;
-
-		const response = await fetch(`/api/getTodoList?year=${year}`);
-		todoList = await response.json();
-	};
-
 	onMount(() => {
 		updateAge();
 
 		clearInterval(ageInterval);
 		ageInterval = setInterval(updateAge, 50);
-
-		loadTodoList("2025");
 	});
 
 	onDestroy(() => {
@@ -79,20 +70,22 @@
 			<h2>todo</h2>
 			<div class="mb-1 flex gap-2 text-xs">
 				<!-- looks good to me ¯\(°_o)/¯ -->
-				<TodoListButton on:click={() => loadTodoList("2025")} year={"2025"} currentYear={todoListYear} />
-				<TodoListButton on:click={() => loadTodoList("2024")} year={"2024"} currentYear={todoListYear} />
+				<TodoListButton on:click={() => todoListYear = "2025"} year={"2025"} currentYear={todoListYear} />
+				<TodoListButton on:click={() => todoListYear = "2024"} year={"2024"} currentYear={todoListYear} />
 			</div>
 		</div>
 		<div class="font-mono">
-			{#if todoList != null}
+			{#await data.streamed.todoList}
+				loading todo list...
+			{:then todoList}
 				{#each todoList as item}
-					<p>[{item.status == "doing" ? "-" : item.status == "done" ? "x" : " "}] {item.name}</p>
-				{:else}
-					<p>error loading todo list :/</p>
+					{#if item.year == todoListYear}
+						<p>[{item.status == "doing" ? "-" : item.status == "done" ? "x" : " "}] {item.name}</p>
+					{/if}
 				{/each}
-			{:else}
-				<p>loading todo list...</p>
-			{/if}
+			{:catch error}
+				<p>error loading todo list: {error.message}</p>
+			{/await}
 		</div>
 	</div>
 	<div class="flex justify-end gap-10">
