@@ -39,7 +39,7 @@
 					<input
 						type="text"
 						name="link"
-						placeholder="https://"
+						placeholder="or linktree, twitter, etc"
 						pattern="https:\/\/[a-zA-Z0-9.\-]+(\.[a-zA-Z])\S*"
 						title="must be a valid https url :/"
 						class="input text-white"
@@ -48,7 +48,7 @@
 			</div>
 			<label class="flex flex-col">
 				<span class="text-sm">a message</span>
-				<textarea use:autosize name="message" rows="1" placeholder="cool website!" required class="input resize-none text-white"></textarea>
+				<textarea use:autosize name="message" rows="1" placeholder="(enter for new line)" required class="input resize-none text-white"></textarea>
 			</label>
 			<button class="btn group ml-auto w-fit bg-white py-1 pl-2 font-medium text-black"
 				>send <span class="pr-4 transition-[padding] group-hover:pl-1 group-hover:pr-3">-&gt;</span></button
