@@ -33,13 +33,13 @@
 			}
 		});
 
-		const res = await response.json();
+		const data = await response.json();
 
-		if (res.action == "secret_new") {
+		if (data.action == "secret_new") {
 			registerSecret(command);
 		}
 
-		history = [...history, ...res.messages];
+		history = [...history, ...data.messages];
 		locked = false;
 		scrollBottom();
 
