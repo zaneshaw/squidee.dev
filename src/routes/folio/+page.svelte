@@ -19,7 +19,7 @@
 
 <svelte:window on:mousemove={onMouseMove} />
 
-<div bind:this={cursorArea} class="center-x pointer-events-none absolute top-[45px] h-[840px] w-[840px]" />
+<div bind:this={cursorArea} class="center-x pointer-events-none absolute top-[45px] h-[840px] w-[840px] hidden lg:block" />
 
 <h1 class="mb-5">folio</h1>
 <div class="gap flex flex-col gap-10">
@@ -57,7 +57,7 @@
 			class="relative flex h-20 w-20 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700 sm:h-32 sm:w-32"
 		>
 			<img src="/folio/squidee-dev-thumb.png" alt="screenshot of this website" />
-			<img src="/cursor.png" alt="" bind:this={cursor} class="pointer-events-none absolute left-0 top-0 w-[3px] hidden sm:block" />
+			<img src="/cursor.png" alt="" bind:this={cursor} class="pointer-events-none absolute left-0 top-0 w-[3px] hidden lg:block" />
 		</div>
 		<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-0 sm:py-3">
 			<div class="hidden justify-between gap-5 sm:flex">
@@ -135,7 +135,7 @@
 		imageSrc="/folio/nmpm-thumb.png"
 		imageAlt="screenshot of NMPM"
 	>
-		<Badge label="private" color="yellow" />
+		<Badge label="🔒 private" color="yellow" />
 		<Badge label="tauri">
 			<img src="logos/tauri.svg" alt="tauri logo" class="w-4" />
 		</Badge>
