@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let label: string;
+	export let label: string | undefined = undefined;
 	export let color: "red" | "yellow" | "green" | undefined = undefined;
 
 	const colors = {
@@ -14,5 +14,7 @@
 	class="group/tag flex h-6 cursor-pointer items-center gap-1 rounded px-1.5 ring-1 transition-colors hover:bg-opacity-10 hover:ring-opacity-30 {colors[color ?? 'none']}"
 >
 	<slot />
-	<span class="my-auto text-sm font-light leading-none tracking-[-0.075em] text-neutral-400 transition-colors group-hover/tag:text-white">{label}</span>
+	{#if label}
+		<span class="my-auto text-sm font-light leading-none tracking-[-0.075em] text-neutral-400 transition-colors group-hover/tag:text-white">{label}</span>
+	{/if}
 </div>

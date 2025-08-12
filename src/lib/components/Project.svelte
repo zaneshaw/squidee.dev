@@ -5,18 +5,28 @@
 	export let imageAlt: string | undefined = undefined;
 	export let demoURL: string | undefined = undefined;
 	export let sourceURL: string | undefined = undefined;
+	export let wip: boolean = false;
 </script>
 
 <div class="group flex rounded ring-1 ring-transparent transition-all">
 	<div
-		class="flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700"
+		class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700"
 	>
 		{#if imageSrc == "comingsoon"}
 			<span class="animate-pulse">coming soon...</span>
 		{:else if imageSrc == undefined}
 			<span>no image</span>
 		{:else}
-			<img src={imageSrc} alt={imageAlt} class="h-full w-full object-cover transition-[height,width] group-hover:h-[120%] group-hover:w-[120%]" />
+			<div class="absolute h-full w-full transition-[height,width] group-hover:h-[110%] group-hover:w-[110%]">
+				<img src={imageSrc} alt={imageAlt} class="h-full w-full object-cover" />
+			</div>
+		{/if}
+		{#if wip}
+			<img
+				src="folio/wip.png"
+				alt="wip"
+				class="pointer-events-none absolute h-full w-full object-cover transition-[opacity,height,width] duration-200 group-hover:h-[120%] group-hover:w-[120%] group-hover:opacity-0"
+			/>
 		{/if}
 	</div>
 	<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-3">

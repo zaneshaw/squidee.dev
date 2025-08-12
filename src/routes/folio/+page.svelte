@@ -22,11 +22,42 @@
 <div bind:this={cursorArea} class="center-x pointer-events-none absolute top-[45px] h-[840px] w-[840px]" />
 
 <h1 class="mb-5">folio</h1>
-<div class="flex flex-col gap gap-10">
+<div class="gap flex flex-col gap-10">
+	<Project name="Fishcove 64" description="secret..." imageSrc="/folio/fishcove-blurred.png" imageAlt="blurred screenshot of Fishcove 64" wip>
+		<Badge label="⚠️ wip" color="yellow" />
+		<Badge label="libdragon">
+			<img src="logos/libdragon.png" alt="libdragon logo" class="w-4" />
+		</Badge>
+		<Badge label="tiny3d">
+			<img src="logos/tiny3d.png" alt="tiny3d logo" class="w-4" />
+		</Badge>
+		<Badge>
+			<img src="logos/c.svg" alt="c logo" class="w-4" />
+		</Badge>
+	</Project>
+	<Project
+		name="Sanctuary 64"
+		description="demo i made to learn how to develop a game for the nintendo 64."
+		imageSrc="/folio/sanctuary64-label.png"
+		imageAlt="Sanctuary 64 cartridge label"
+	>
+		<Badge label="🔒 private" color="yellow" />
+		<Badge label="libdragon">
+			<img src="logos/libdragon.png" alt="libdragon logo" class="w-4" />
+		</Badge>
+		<Badge label="tiny3d">
+			<img src="logos/tiny3d.png" alt="tiny3d logo" class="w-4" />
+		</Badge>
+		<Badge>
+			<img src="logos/c.svg" alt="c logo" class="w-4" />
+		</Badge>
+	</Project>
 	<div class="group flex rounded ring-1 ring-transparent transition-all">
-		<div class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700">
-			<img src="/folio/squidee-dev-thumb2.png" alt="screenshot of this website" />
-			<img src="/cursor.png" alt="" bind:this={cursor} class="absolute left-0 top-0 w-[3px]" />
+		<div
+			class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700"
+		>
+			<img src="/folio/squidee-dev-thumb.png" alt="screenshot of this website" />
+			<img src="/cursor.png" alt="" bind:this={cursor} class="pointer-events-none absolute left-0 top-0 w-[3px]" />
 		</div>
 		<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-3">
 			<div class="flex justify-between gap-5">
@@ -49,6 +80,9 @@
 				<Badge label="svelte">
 					<img src="logos/svelte.svg" alt="svelte logo" class="w-4" />
 				</Badge>
+				<Badge>
+					<img src="logos/typescript.svg" alt="typescript logo" class="w-4" />
+				</Badge>
 			</div>
 		</div>
 	</div>
@@ -62,6 +96,9 @@
 	>
 		<Badge label="react">
 			<img src="logos/react.svg" alt="react logo" class="w-4" />
+		</Badge>
+		<Badge>
+			<img src="logos/typescript.svg" alt="typescript logo" class="w-4" />
 		</Badge>
 	</Project>
 	<Project
@@ -81,6 +118,9 @@
 		<Badge label="vue">
 			<img src="logos/vue.svg" alt="vue logo" class="w-4" />
 		</Badge>
+		<Badge>
+			<img src="logos/typescript.svg" alt="typescript logo" class="w-4" />
+		</Badge>
 	</Project>
 	<Project
 		name="NMPM"
@@ -95,6 +135,8 @@
 		<Badge label="svelte">
 			<img src="logos/svelte.svg" alt="svelte logo" class="w-4" />
 		</Badge>
+		<Badge>
+			<img src="logos/typescript.svg" alt="typescript logo" class="w-4" />
+		</Badge>
 	</Project>
-	<Project name="placeholder" description="nothing here yet." />
 </div>
