@@ -54,13 +54,13 @@
 	</Project>
 	<div class="group flex rounded ring-1 ring-transparent transition-all">
 		<div
-			class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700"
+			class="relative flex h-20 w-20 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700 sm:h-32 sm:w-32"
 		>
 			<img src="/folio/squidee-dev-thumb.png" alt="screenshot of this website" />
-			<img src="/cursor.png" alt="" bind:this={cursor} class="pointer-events-none absolute left-0 top-0 w-[3px]" />
+			<img src="/cursor.png" alt="" bind:this={cursor} class="pointer-events-none absolute left-0 top-0 w-[3px] hidden sm:block" />
 		</div>
-		<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-3">
-			<div class="flex justify-between gap-5">
+		<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-0 sm:py-3">
+			<div class="hidden justify-between gap-5 sm:flex">
 				<h2 class="truncate">squidee.dev</h2>
 				<div class="flex shrink-0 gap-8">
 					<a href="https://squidee.dev" target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
@@ -73,6 +73,13 @@
 					</a>
 				</div>
 			</div>
+			<div class="flex justify-between gap-5 sm:hidden">
+				<a href="https://squidee.dev" target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
+					<h2 class="link truncate">squidee.dev</h2>
+					<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
+				</a>
+			</div>
+
 			<p class="line-clamp-2 break-words leading-tight text-neutral-400 transition-colors group-hover:text-neutral-300">
 				this website. i use it to put all my stuff in one place.
 			</p>

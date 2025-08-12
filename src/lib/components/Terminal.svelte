@@ -130,7 +130,7 @@
 		/>
 	</div>
 {:else}
-	<button transition:fly={{ x: -15, duration: 250 }} on:click={open} class="fixed bottom-0 left-0 p-2">
+	<button transition:fly={{ x: -15, duration: 250 }} on:click={open} class="fixed bottom-0 left-0 p-2 md:block hidden">
 		<img src="/square-terminal.svg" alt="terminal icon" />
 	</button>
 {/if}

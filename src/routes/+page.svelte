@@ -70,8 +70,8 @@
 			<h2>todo</h2>
 			<div class="mb-1 flex gap-2 text-xs">
 				<!-- looks good to me ¯\(°_o)/¯ -->
-				<TodoListButton on:click={() => todoListYear = "2025"} year={"2025"} currentYear={todoListYear} />
-				<TodoListButton on:click={() => todoListYear = "2024"} year={"2024"} currentYear={todoListYear} />
+				<TodoListButton on:click={() => (todoListYear = "2025")} year={"2025"} currentYear={todoListYear} />
+				<TodoListButton on:click={() => (todoListYear = "2024")} year={"2024"} currentYear={todoListYear} />
 			</div>
 		</div>
 		<div class="font-mono">
@@ -88,7 +88,8 @@
 			{/await}
 		</div>
 	</div>
-	<div class="flex justify-end gap-10">
+	<div class="flex flex-col justify-end gap-3 sm:flex-row sm:gap-10">
+		<h2 class="sm:hidden block">links</h2>
 		<SocialLink icon="mail.svg" alt="mail icon">zane &lbrace;at&rbrace; squidee.dev</SocialLink>
 		<SocialLink url="https://github.com/zaneshaw" icon="github.svg" alt="github logo">github</SocialLink>
 		<SocialLink url="https://x.com/zaneshaw_" icon="twitter.svg" alt="twitter logo">twitter / x</SocialLink>

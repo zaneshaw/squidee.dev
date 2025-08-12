@@ -10,7 +10,7 @@
 
 <div class="group flex rounded ring-1 ring-transparent transition-all">
 	<div
-		class="relative flex h-32 w-32 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700"
+		class="relative flex h-20 w-20 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700 sm:h-32 sm:w-32"
 	>
 		{#if imageSrc == "comingsoon"}
 			<span class="animate-pulse">coming soon...</span>
@@ -29,8 +29,8 @@
 			/>
 		{/if}
 	</div>
-	<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-3">
-		<div class="flex justify-between gap-5">
+	<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-0 sm:py-3">
+		<div class="hidden justify-between gap-5 sm:flex">
 			<h2 class="truncate">{name}</h2>
 			<div class="flex shrink-0 gap-8">
 				{#if demoURL}
@@ -47,6 +47,17 @@
 				{/if}
 			</div>
 		</div>
+		<div class="flex justify-between gap-5 sm:hidden">
+			{#if demoURL}
+				<a href={demoURL} target="_blank" class="flex shrink-0 cursor-pointer gap-0.5">
+					<h2 class="link truncate">{name}</h2>
+					<img src="arrow-up-right.svg" alt="" class="mb-auto w-3" />
+				</a>
+			{:else}
+				<h2 class="truncate">{name}</h2>
+			{/if}
+		</div>
+
 		<p class="line-clamp-2 break-words leading-tight text-neutral-400 transition-colors group-hover:text-neutral-300">
 			{description}
 		</p>

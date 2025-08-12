@@ -29,12 +29,12 @@
 	<div class="flex flex-col gap-1.5">
 		<form method="POST" class="flex flex-col gap-5 rounded p-5 ring-1 ring-white">
 			<h2>leave a message</h2>
-			<div class="flex gap-5">
-				<label class="flex basis-1/3 flex-col">
+			<div class="flex flex-wrap gap-5 sm:flex-nowrap">
+				<label class="flex basis-full flex-col sm:basis-2/5">
 					<span class="text-sm">your name / username</span>
-					<input type="text" name="author" placeholder="..." required class="input text-white" />
+					<input type="text" name="author" placeholder="..." required class="input w-full text-white" />
 				</label>
-				<label class="flex basis-2/3 flex-col">
+				<label class="flex basis-full flex-col sm:basis-3/5">
 					<span class="text-sm">your personal website <span class="ml-0.5 text-neutral-500">&lpar;optional&rpar;</span></span>
 					<input
 						type="text"
@@ -42,13 +42,13 @@
 						placeholder="or linktree, twitter, etc"
 						pattern="https:\/\/[a-zA-Z0-9.\-]+(\.[a-zA-Z])\S*"
 						title="must be a valid https url :/"
-						class="input text-white"
+						class="input w-full text-white"
 					/>
 				</label>
 			</div>
 			<label class="flex flex-col">
 				<span class="text-sm">a message</span>
-				<textarea use:autosize name="message" rows="1" placeholder="(press enter for new line)" required class="input resize-none text-white"></textarea>
+				<textarea use:autosize name="message" rows="1" placeholder="(press enter for new line)" required class="input w-full resize-none text-white"></textarea>
 			</label>
 			<button class="btn group ml-auto w-fit bg-white py-1 pl-2 font-medium text-black"
 				>send <span class="pr-4 transition-[padding] group-hover:pl-1 group-hover:pr-3">-&gt;</span></button

@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="group/tag flex h-6 cursor-pointer items-center gap-1 rounded px-1.5 ring-1 transition-colors hover:bg-opacity-10 hover:ring-opacity-30 {colors[color ?? 'none']}"
+	class="group/tag sm:flex hidden h-6 cursor-pointer items-center gap-1 rounded px-1.5 ring-1 transition-colors hover:bg-opacity-10 hover:ring-opacity-30 {colors[color ?? 'none']} "
 >
 	<slot />
 	{#if label}
