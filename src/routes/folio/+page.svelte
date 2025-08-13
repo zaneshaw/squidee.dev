@@ -24,7 +24,7 @@
 <h1 class="mb-5">folio</h1>
 <div class="gap flex flex-col gap-10">
 	<Project name="Fishcove 64" description="secret..." imageSrc="/folio/fishcove-blurred.png" imageAlt="blurred screenshot of Fishcove 64" wip>
-		<Badge label="⚠️ wip" color="yellow" />
+		<Badge label="🛠️ work in progress" color="yellow" />
 		<Badge label="libdragon">
 			<img src="logos/libdragon.png" alt="libdragon logo" class="w-4" />
 		</Badge>
