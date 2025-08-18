@@ -2,7 +2,7 @@ import type { RequestHandler } from "./$types";
 import { pb } from "$lib/db";
 import { RecordModel } from "pocketbase";
 
-export const GET: RequestHandler = async ({ fetch, setHeaders }) => {
+export const GET: RequestHandler = async ({ setHeaders }) => {
 	setHeaders({
 		"Cache-Control": "max-age=0, s-max-age=600",
 		"Content-Type": "application/xml"
@@ -23,14 +23,14 @@ const render = (messages: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8
 		<description>A guestbook</description>
 		<language>en-au</language>
 		<category>Guestbook</category>
-		<atom:link href="https://squidee.dev/guestbook/rss.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://squidee.dev/guestbook/rss" rel="self" type="application/rss+xml" />
 		${messages.map(
 			(message) => `<item>
 			<title>${message.message}</title>${message.link ? `\n\t\t\t<link>${message.link}</link>` : ""}
 			<author>${message.author}</author>
 			<pubDate>${new Date(message.created).toUTCString()}</pubDate>
 		</item>`
-		)}
+		).join("\n\t\t")}
 	</channel>
 </rss>
 `;

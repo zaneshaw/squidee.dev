@@ -2,7 +2,7 @@ import type { RequestHandler } from "./$types";
 import { pb } from "$lib/db";
 import { RecordModel } from "pocketbase";
 
-export const GET: RequestHandler = async ({ fetch, setHeaders }) => {
+export const GET: RequestHandler = async ({ setHeaders }) => {
 	setHeaders({
 		"Cache-Control": "max-age=0, s-max-age=600",
 		"Content-Type": "application/xml"
@@ -23,7 +23,7 @@ const render = (posts: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8" ?
 		<description>A blog</description>
 		<language>en-au</language>
 		<category>Blog</category>
-		<atom:link href="https://squidee.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://squidee.dev/blog/rss" rel="self" type="application/rss+xml" />
 		${posts.map(
 			(post) => `<item>
 			<title>${post.title}</title>
@@ -31,7 +31,7 @@ const render = (posts: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8" ?
 			<description>${post.blurb}</description>
 			<pubDate>${new Date(post.created).toUTCString()}</pubDate>
 		</item>`
-		)}
+		).join("\n\t\t")}
 	</channel>
 </rss>
 `;
