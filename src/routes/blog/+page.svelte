@@ -7,11 +7,12 @@
 
 <svelte:head>
 	<title>blog - zane shaw</title>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://squidee.dev/feeds/blog">
 </svelte:head>
 
 <div class="flex items-center justify-between">
 	<h1>blog</h1>
-	<a href="https://squidee.dev/blog/rss" target="_blank" title="rss" class="group flex h-6 w-6 items-center justify-center">
+	<a href="/feeds/blog" target="_blank" title="rss" class="group flex h-6 w-6 items-center justify-center">
 		<img src="/rss.svg" alt="rss" class="w-3 opacity-50 transition-[opacity] group-hover:opacity-100" />
 	</a>
 </div>

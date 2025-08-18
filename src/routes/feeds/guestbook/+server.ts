@@ -23,7 +23,7 @@ const render = (messages: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8
 		<description>A guestbook</description>
 		<language>en-au</language>
 		<category>Guestbook</category>
-		<atom:link href="https://squidee.dev/guestbook/rss" rel="self" type="application/rss+xml" />
+		<atom:link href="https://squidee.dev/feeds/guestbook" rel="self" type="application/rss+xml" />
 		${messages.map(
 			(message) => `<item>
 			<title>${message.message}</title>${message.link ? `\n\t\t\t<link>${message.link}</link>` : ""}

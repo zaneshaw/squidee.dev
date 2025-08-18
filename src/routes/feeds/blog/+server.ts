@@ -23,7 +23,7 @@ const render = (posts: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8" ?
 		<description>A blog</description>
 		<language>en-au</language>
 		<category>Blog</category>
-		<atom:link href="https://squidee.dev/blog/rss" rel="self" type="application/rss+xml" />
+		<atom:link href="https://squidee.dev/feeds/blog" rel="self" type="application/rss+xml" />
 		${posts.map(
 			(post) => `<item>
 			<title>${post.title}</title>
