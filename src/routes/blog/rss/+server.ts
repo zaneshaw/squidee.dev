@@ -30,6 +30,7 @@ const render = (posts: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8" ?
 			<link>https://squidee.dev/blog/${post.slug}</link>
 			<description>${post.blurb}</description>
 			<pubDate>${new Date(post.created).toUTCString()}</pubDate>
+			<guid isPermaLink="false">${post.id}</guid>
 		</item>`
 		).join("\n\t\t")}
 	</channel>
