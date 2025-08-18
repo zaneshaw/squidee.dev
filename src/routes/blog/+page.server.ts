@@ -7,6 +7,6 @@ export const load: PageServerLoad = async () => {
 	});
 
 	return {
-		posts: posts.items
+		posts: posts.items.filter(post => post.published)
 	};
 };

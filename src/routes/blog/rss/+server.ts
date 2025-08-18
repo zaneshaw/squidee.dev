@@ -12,7 +12,7 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
 		sort: "-created"
 	});
 
-	return new Response(render(posts));
+	return new Response(render(posts.filter(post => post.published)));
 };
 
 const render = (posts: RecordModel[]) => `<?xml version="1.0" encoding="UTF-8" ?>
