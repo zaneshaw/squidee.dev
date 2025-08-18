@@ -4,7 +4,7 @@ import { RecordModel } from "pocketbase";
 
 export const GET: RequestHandler = async ({ setHeaders }) => {
 	setHeaders({
-		"Cache-Control": "max-age=0, s-max-age=600",
+		"Cache-Control": "max-age=0, s-maxage=600",
 		"Content-Type": "application/xml"
 	});
 
