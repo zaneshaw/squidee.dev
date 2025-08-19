@@ -26,7 +26,7 @@
 		updateAge();
 
 		clearInterval(ageInterval);
-		ageInterval = setInterval(updateAge, 50);
+		ageInterval = setInterval(updateAge, 10);
 	});
 
 	onDestroy(() => {
