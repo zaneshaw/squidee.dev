@@ -7,6 +7,21 @@
 
 	export let data;
 
+	let preloadedImages = [
+		"/arrow-up-right.svg",
+
+		"/badgarf.jpg",
+		"/user.svg",
+		"/map-pin.svg",
+		"/mail.svg",
+		"/github.svg",
+		"/twitter.svg",
+
+		"/folio/wip.png",
+
+		"/rss.svg",
+	];
+
 	let progressInterval: number;
 	let direction: number;
 	let routes = [
@@ -47,6 +62,12 @@
 		}
 	};
 </script>
+
+<svelte:head>
+	{#each preloadedImages as image}
+		<link rel="preload" as="image" href={image} />
+	{/each}
+</svelte:head>
 
 {#if $loading}
 	<div out:fade={{ duration: 300, delay: 100 }} style="width: {$progress * 100}%;" class="fixed left-0 top-0 z-50 h-0.5 bg-white transition-[width]" />

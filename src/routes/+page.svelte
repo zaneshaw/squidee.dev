@@ -43,7 +43,7 @@
 		<div class="flex items-center gap-6">
 			<div>
 				<div class="relative h-28 w-28 items-center justify-center overflow-hidden rounded ring-1 ring-neutral-600">
-					<img src="badgarf.png" alt="@PfpDrawer" title="@PfpDrawer" />
+					<img src="badgarf.jpg" alt="@PfpDrawer" title="@PfpDrawer" />
 				</div>
 			</div>
 			<div class="flex flex-col gap-2">

@@ -23,7 +23,7 @@
 
 <h1 class="mb-5">folio</h1>
 <div class="gap flex flex-col gap-10">
-	<Project name="Fishcove 64" description="secret..." imageSrc="/folio/fishcove-blurred.png" imageAlt="blurred screenshot of Fishcove 64" wip>
+	<Project name="Fishcove 64" description="secret..." imageSrc="/folio/fishcove-blurred.jpg" imageAlt="blurred screenshot of Fishcove 64" wip>
 		<Badge label="🛠️ work in progress" color="yellow" />
 		<Badge label="libdragon">
 			<img src="logos/libdragon.png" alt="libdragon logo" class="w-4" />
@@ -38,7 +38,7 @@
 	<Project
 		name="Sanctuary 64"
 		description="demo i made to learn how to develop a game for the nintendo 64."
-		imageSrc="/folio/sanctuary64-label.png"
+		imageSrc="/folio/sanctuary64-label.jpg"
 		imageAlt="Sanctuary 64 cartridge label"
 	>
 		<Badge label="🔒 private" color="yellow" />
@@ -56,7 +56,7 @@
 		<div
 			class="relative flex h-20 w-20 shrink-0 cursor-default items-center justify-center overflow-hidden rounded bg-neutral-800 ring-1 ring-neutral-800 transition group-hover:ring-neutral-700 sm:h-32 sm:w-32"
 		>
-			<img src="/folio/squidee-dev-thumb.png" alt="screenshot of this website" />
+			<img src="/folio/squidee-dev-thumb.jpg" alt="screenshot of this website" />
 			<img src="/cursor.png" alt="" bind:this={cursor} class="pointer-events-none absolute left-0 top-0 w-[3px] hidden lg:block" />
 		</div>
 		<div class="relative flex w-full flex-col gap-2 overflow-hidden px-4 py-0 sm:py-3">
