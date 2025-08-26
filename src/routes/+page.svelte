@@ -43,10 +43,10 @@
 
 <div class="flex flex-col gap-6">
 	<div class="flex flex-col gap-4">
-		<div class="flex items-center gap-6">
+		<div class="flex items-center gap-3">
 			<div>
-				<div class="relative h-28 w-28 items-center justify-center overflow-hidden rounded ring-1 ring-neutral-600">
-					<img src="badgarf.jpg" alt="@PfpDrawer" title="@PfpDrawer" />
+				<div class="relative h-28 w-28 p-2">
+					<img src="zanesquid3_small.png" alt="me with a squid hat" />
 				</div>
 			</div>
 			<div class="flex flex-col gap-2">

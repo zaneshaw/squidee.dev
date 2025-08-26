@@ -10,7 +10,7 @@
 	let preloadedImages = [
 		"/arrow-up-right.svg",
 
-		"/badgarf.jpg",
+		"/zanesquid3_small.png",
 		"/user.svg",
 		"/map-pin.svg",
 		"/mail.svg",
