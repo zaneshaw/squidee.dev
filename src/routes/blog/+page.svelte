@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<title>blog - zane shaw</title>
+	<meta property="og:title" content="blog - zane shaw" />
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://squidee.dev/feeds/blog">
 </svelte:head>
 

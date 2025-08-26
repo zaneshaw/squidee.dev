@@ -5,6 +5,13 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>{data.title} - zane shaw</title>
+	<meta property="og:title" content="{data.title} - zane shaw" />
+	<meta name="description" content={data.blurb}>
+	<meta property="og:description" content={data.blurb} />
+</svelte:head>
+
 <div class="flex flex-col gap-8">
 	<div class="flex flex-col gap-4">
 		<a href="/blog" class="link w-fit">&lt; back</a>

@@ -15,6 +15,9 @@
 
 <svelte:head>
 	<title>folio - zane shaw</title>
+	<meta property="og:title" content="folio - zane shaw" />
+	<meta name="description" content="i'm a 20 y/o cs undergrad student currently developing games and websites for fun.">
+	<meta property="og:description" content="i'm a 20 y/o cs undergrad student currently developing games and websites for fun." />
 </svelte:head>
 
 <svelte:window on:mousemove={onMouseMove} />

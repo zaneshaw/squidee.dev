@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<title>guestbook - zane shaw</title>
+	<meta property="og:title" content="guestbook - zane shaw" />
 </svelte:head>
 
 <h1 class="mb-5">guestbook</h1>
