@@ -1,7 +1,6 @@
 <script lang="ts">
 	import InfoItem from "$lib/components/InfoItem.svelte";
 	import SocialLink from "$lib/components/SocialLink.svelte";
-	import StatusIndicator from "$lib/components/StatusIndicator.svelte";
 	import { DateTime } from "luxon";
 	import { onDestroy, onMount } from "svelte";
 	import type { PageData } from "./$types";
@@ -13,24 +12,37 @@
 	let ageInterval: number;
 	let todoListYear: string = "2025";
 
+	let myTime = "...";
+	let myTimeInterval: number;
+
 	const updateAge = () => {
+		const localTime = DateTime.local();
 		const birthday = { year: 2005, month: 8, day: 20 };
-		const yearAge = DateTime.local().year - birthday.year - 1;
-		const lastBirthday = DateTime.local(DateTime.local().year - 1, birthday.month, birthday.day + (DateTime.local().isInLeapYear ? 1 : 0));
-		const ageProgress = DateTime.local().diff(lastBirthday);
+		const yearAge = localTime.year - birthday.year - 1;
+		const lastBirthday = DateTime.local(localTime.year - 1, birthday.month, birthday.day + (localTime.isInLeapYear ? 1 : 0));
+		const ageProgress = localTime.diff(lastBirthday);
 
 		age = (yearAge + ageProgress.shiftTo("years").years).toFixed(9);
 	};
 
+	const updateMyTime = () => {
+		myTime = DateTime.local().setZone("Australia/Melbourne").toFormat("hh:mm a");
+	};
+
 	onMount(() => {
 		updateAge();
+		updateMyTime();
 
 		clearInterval(ageInterval);
 		ageInterval = setInterval(updateAge, 10);
+
+		clearInterval(myTimeInterval);
+		myTimeInterval = setInterval(updateMyTime, 1000);
 	});
 
 	onDestroy(() => {
 		clearInterval(ageInterval);
+		clearInterval(myTimeInterval);
 	});
 </script>
 
@@ -45,18 +57,16 @@
 	<div class="flex flex-col gap-4">
 		<div class="flex items-center gap-3">
 			<div>
-				<div class="relative h-28 w-28 p-2">
+				<div class="relative h-28 w-28">
 					<img src="zanesquid3_small.png" alt="me with a squid hat" />
 				</div>
 			</div>
 			<div class="flex flex-col gap-2">
-				<div class="flex gap-3">
-					<h1>zane shaw</h1>
-					<StatusIndicator />
-				</div>
+				<h1>zane shaw</h1>
 				<div class="flex flex-col">
 					<InfoItem icon="user.svg" alt="user icon" label="squidee" />
 					<InfoItem icon="map-pin.svg" alt="map pin icon" label="melbourne, australia" />
+					<InfoItem icon="clock.svg" alt="clock icon" label={myTime} />
 				</div>
 			</div>
 		</div>
