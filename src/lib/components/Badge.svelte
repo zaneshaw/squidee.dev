@@ -3,10 +3,10 @@
 	export let color: "red" | "yellow" | "green" | undefined = undefined;
 
 	const colors = {
-		red: "ring-red-500 bg-red-500 ring-opacity-20 bg-opacity-[7.5%]",
-		yellow: "ring-yellow-500 bg-yellow-500 ring-opacity-20 bg-opacity-5",
-		green: "ring-green-500 bg-green-500 ring-opacity-20 bg-opacity-[7.5%]",
-		none: "ring-white bg-white ring-opacity-[15%] bg-opacity-5"
+		red: "ring-red-500/20 bg-red-500[7.5%]",
+		yellow: "ring-yellow-500/20 bg-yellow-500/5",
+		green: "ring-green-500/20 bg-green-500/[7.5%]",
+		none: "ring-white/15 bg-white/5"
 	};
 </script>
 

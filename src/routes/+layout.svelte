@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "../app.postcss";
+	import "../app.css";
 	import { fade, fly } from "svelte/transition";
 	import { navigating } from "$app/stores";
 	import { progress, loading, increaseProgress } from "$lib/stores/loading";
