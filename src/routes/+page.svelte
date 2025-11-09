@@ -49,7 +49,7 @@
 <svelte:head>
 	<title>zane shaw</title>
 	<meta property="og:title" content="zane shaw" />
-	<meta name="description" content="i'm a 20 y/o cs undergrad student currently developing games and websites for fun.">
+	<meta name="description" content="i'm a 20 y/o cs undergrad student currently developing games and websites for fun." />
 	<meta property="og:description" content="i'm a 20 y/o cs undergrad student currently developing games and websites for fun." />
 </svelte:head>
 
@@ -77,6 +77,12 @@
 		<p>
 			leave something in my <a href="/guestbook" class="link">guestbook</a> while you're here :D
 		</p>
+		<div class="flex items-center gap-1">
+			<img src="logos/neocities.svg" alt="neocities logo" class="h-10 rock" />
+			<p class="mb-2">
+				<a href="https://squidee.neocities.org/" class="link italic">check out my new, less boring website on neocities!</a>
+			</p>
+		</div>
 	</div>
 	<div>
 		<div class="flex items-end gap-3">
@@ -102,7 +108,7 @@
 		</div>
 	</div>
 	<div class="flex flex-col justify-end gap-3 sm:flex-row sm:gap-10">
-		<h2 class="sm:hidden block">links</h2>
+		<h2 class="block sm:hidden">links</h2>
 		<SocialLink icon="mail.svg" alt="mail icon">zane &lbrace;at&rbrace; squidee.dev</SocialLink>
 		<SocialLink url="https://github.com/zaneshaw" icon="github.svg" alt="github logo">github</SocialLink>
 		<SocialLink url="https://x.com/zaneshaw_" icon="twitter.svg" alt="twitter logo">twitter / x</SocialLink>

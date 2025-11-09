@@ -71,4 +71,14 @@
 	.center-y {
 		@apply top-1/2 -translate-y-1/2;
 	}
+
+	@keyframes rockAnimation {
+		50% {
+			transform: scale(1.01) rotate(10deg);
+		}
+	}
+
+	.rock {
+		animation: rockAnimation 800ms step-end infinite;
+	}
 }
