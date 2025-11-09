@@ -1,3 +1,9 @@
 [build]
 command = "pnpm i --frozen-lockfile && pnpm build"
 publish = "build"
+
+[[headers]]
+for = "/*.opus"
+	[headers.values]
+	Access-Control-Allow-Origin = "*"
+	cache-control = "public, max-age=86400, no-cache"
