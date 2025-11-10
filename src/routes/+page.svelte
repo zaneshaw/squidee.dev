@@ -77,10 +77,10 @@
 		<p>
 			leave something in my <a href="/guestbook" class="link">guestbook</a> while you're here :D
 		</p>
-		<div class="flex items-center gap-1">
-			<img src="logos/neocities.svg" alt="neocities logo" class="h-10 rock" />
-			<p class="mb-2">
-				<a href="https://squidee.neocities.org/" class="link italic">check out my new, less boring website on neocities!</a>
+		<div class="flex items-center gap-2">
+			<img src="logos/codecatputer.gif" alt="nekoweb logo" class="h-8" />
+			<p class="mb-1">
+				<a href="https://squidee.nekoweb.org/" class="link italic">check out my new, less boring website on Nekoweb!</a>
 			</p>
 		</div>
 	</div>
