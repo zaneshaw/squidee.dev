@@ -20,7 +20,7 @@
 
 		"/folio/wip.png",
 
-		"/rss.svg",
+		"/rss.svg"
 	];
 
 	let progressInterval: number;
@@ -29,7 +29,8 @@
 		{ name: "me", path: "/" },
 		{ name: "folio", path: "/folio" },
 		{ name: "blog", path: "/blog" },
-		{ name: "guestbook", path: "/guestbook" }
+		{ name: "guestbook", path: "/guestbook" },
+		{ name: "archive", path: "/archive" }
 	];
 	$: if ($navigating) {
 		changeDir($navigating);
@@ -71,7 +72,7 @@
 </svelte:head>
 
 {#if $loading}
-	<div out:fade={{ duration: 300, delay: 100 }} style="width: {$progress * 100}%;" class="fixed left-0 top-0 z-50 h-0.5 bg-white transition-[width]" />
+	<div out:fade={{ duration: 300, delay: 100 }} style="width: {$progress * 100}%;" class="fixed top-0 left-0 z-50 h-0.5 bg-white transition-[width]" />
 {/if}
 
 <header class="flex gap-5 py-8">
