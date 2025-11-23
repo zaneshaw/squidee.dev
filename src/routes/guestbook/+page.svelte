@@ -11,7 +11,15 @@
 	<meta property="og:title" content="guestbook - zane shaw" />
 </svelte:head>
 
-<h1 class="mb-5">guestbook</h1>
+<div class="mb-5 flex items-center justify-between">
+	<h1>guestbook</h1>
+	<div class="flex items-center gap-1">
+		<img src="logos/codecatputer.gif" alt="nekoweb logo" class="h-6" />
+		<p class="mb-1">
+			<a href="https://squidee.nekoweb.org/guestbook" class="link italic">switch to Nekoweb guestbook</a>
+		</p>
+	</div>
+</div>
 <div class="gap flex flex-col gap-10">
 	{#each data.messages as message}
 		<div class="flex w-full flex-col">
@@ -24,7 +32,7 @@
 				<div class="my-auto h-3.5 w-px bg-neutral-700" />
 				<span class="ml-auto text-neutral-500">{DateTime.fromJSDate(new Date(message.created)).toFormat("DD")}</span>
 			</div>
-			<h2 class="relative whitespace-pre-line break-words font-semibold text-white">{message.message}</h2>
+			<h2 class="relative font-semibold break-words whitespace-pre-line text-white">{message.message}</h2>
 		</div>
 	{/each}
 	<div class="flex flex-col gap-1.5">
@@ -52,7 +60,7 @@
 				<textarea use:autosize name="message" rows="1" placeholder="(press enter for new line)" required class="input w-full resize-none text-white"></textarea>
 			</label>
 			<button class="btn group ml-auto w-fit bg-white py-1 pl-2 font-medium text-black"
-				>send <span class="pr-4 transition-[padding] group-hover:pl-1 group-hover:pr-3">-&gt;</span></button
+				>send <span class="pr-4 transition-[padding] group-hover:pr-3 group-hover:pl-1">-&gt;</span></button
 			>
 		</form>
 		<span class="px-1 text-sm text-neutral-500">send me an email if you would like your message removed</span>
