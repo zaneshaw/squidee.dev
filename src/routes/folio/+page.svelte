@@ -119,6 +119,7 @@
 		demoURL="https://paste.squidee.dev"
 		sourceURL="https://github.com/zaneshaw/squidpaste"
 	>
+		<Badge label="☠️ discontinued" color="gray" />
 		<Badge label="express">
 			<img src="logos/express.svg" alt="express logo" class="h-4 w-4" />
 		</Badge>

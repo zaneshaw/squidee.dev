@@ -1,11 +1,12 @@
 <script lang="ts">
 	export let label: string | undefined = undefined;
-	export let color: "red" | "yellow" | "green" | undefined = undefined;
+	export let color: "red" | "yellow" | "green" | "gray" | undefined = undefined;
 
 	const colors = {
 		red: "ring-red-500/20 bg-red-500[7.5%]",
 		yellow: "ring-yellow-500/20 bg-yellow-500/5",
 		green: "ring-green-500/20 bg-green-500/[7.5%]",
+		gray: "ring-white/25 bg-white/10",
 		none: "ring-white/15 bg-white/5"
 	};
 </script>
